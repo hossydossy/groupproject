@@ -9,15 +9,16 @@
       <under-construction></under-construction>
     </div>
   </div>
-  <div class="main-container">
+  <!-- <div class="main-container" v-if="playPG">
     <div id="games-container">
       <picture-game></picture-game>
     </div>
-  </div>
+  </div> -->
 </div>
 </template>
 
 <script>
+import { eventBus } from '@/main.js'
 import PictureGame from './PictureGame.vue';
 import UnderConstruction from './UnderConstruction.vue';
 import PictureGameSelect from './PictureGameSelect.vue';
@@ -25,6 +26,7 @@ import NavBar from './NavBar.vue';
 export default {
   name: 'play',
   components: {
+    'picture-game': PictureGame,
     'nav-bar': NavBar,
     'picture-game-select': PictureGameSelect,
     'under-construction': UnderConstruction,

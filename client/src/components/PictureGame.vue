@@ -1,5 +1,7 @@
 <template lang="html">
+  <div>
   <h1>PictureGame</h1>
+</div>
 </template>
 
 <script>

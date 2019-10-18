@@ -5,8 +5,14 @@
 </template>
 
 <script>
+import { eventBus } from '@/main.js';
 export default {
   name: 'picture-game-select',
+  methods: {
+    playPictureGame: function(){
+      eventBus.$emit('start-game', this.playPG = true)
+    }
+  }
 }
 </script>
 
