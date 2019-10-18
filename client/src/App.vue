@@ -1,4 +1,5 @@
 <template lang="html">
+<h1>WELCOME TO THE JUNGLE</h1>
   <home-page></home-page>
 </template>
 
