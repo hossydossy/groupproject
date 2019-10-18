@@ -1,20 +1,17 @@
 <template lang="html">
   <div class="main-container">
     <nav-bar></nav-bar>
-    <h1>Countries of the World</h1>
-    <call-to-action></call-to-action>
+    <h2>Select a game:</h2>
   </div>
 </template>
 
 <script>
-import { eventBus } from '@/main.js';
+import PictureGame from './PictureGame.vue'
 import NavBar from './NavBar.vue'
-import CallToAction from './CallToAction.vue';
 export default {
-  name: "home-page",
+  name: 'play',
   components: {
-    'call-to-action': CallToAction,
-    'nav-bar': NavBar,
+    'nav-bar': NavBar
   }
 }
 </script>
@@ -30,9 +27,4 @@ export default {
   height: 100%;
   text-align: center;
 }
-
-/* #bg{
-  background-image: url("/public/home-background.jpg");
-  background-size: cover; */
-/* } */
 </style>
