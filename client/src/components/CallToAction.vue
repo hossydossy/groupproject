@@ -17,8 +17,16 @@ export default {
 <style lang="css" scoped>
 button{
   margin: 20px auto 20px auto;
-  border-radius: 5px;
+  border-radius: 10px;
   height: 50px;
   width: 150px;
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: Black;
+  /* display: block; */
+}
+button:hover {
+  color: #818181;
 }
 </style>

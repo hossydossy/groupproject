@@ -36,12 +36,9 @@ h2 {
 .main-container {
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  height: 100%; */
-  /* background-image: url("/public/home-background.jpg");
-  background-size: cover; */
   height: 100%;
   text-align: center;
+  margin-left: 15%;
 }
 #games-container {
   display: flex;

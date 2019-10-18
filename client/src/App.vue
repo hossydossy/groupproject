@@ -2,6 +2,7 @@
 <div class="bg">
   <home-page v-if="!initialised"></home-page>
   <play v-if="initialised && !playPG"></play>
+  <picture-game v-if="initialised && playPG"></picture-game>
 </div>
 </template>
 
@@ -9,6 +10,7 @@
 import { eventBus } from '@/main.js';
 import HomePage from './components/HomePage.vue';
 import Play from './components/Play.vue';
+import PictureGame from './components/PictureGame.vue'
 export default {
   name: 'app',
   data(){
@@ -20,6 +22,7 @@ export default {
   components: {
     'home-page': HomePage,
     'play': Play,
+    'picture-game': PictureGame,
   },
   mounted() {
     eventBus.$on('select-game', (initialised) => {
@@ -36,6 +39,7 @@ export default {
   .bg{
     background-image: url("../public/background.jpg");
     background-size: cover;
-    height: 100%
+    height: 100%;
+    margin-left: 15%;
   }
 </style>

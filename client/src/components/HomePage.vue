@@ -2,6 +2,7 @@
   <div class="main-container">
     <nav-bar></nav-bar>
     <h1>Countries of the World</h1>
+    <h2>Educational App for Children</h2>
     <call-to-action></call-to-action>
   </div>
 </template>
@@ -22,15 +23,21 @@ export default {
 .main-container {
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  height: 100%; */
-  /* background-image: url("/public/home-background.jpg");
-  background-size: cover; */
   height: 100%;
   text-align: center;
+  margin-left: 15%;
 }
 
-h1 {
+h1{
+  font-size: 50px;
+  margin: 50px auto 20px auto;
+}
+
+h2{
+  margin: 0 auto 20px auto;
+}
+
+h1, h2{
   color: White;
 }
 </style>
