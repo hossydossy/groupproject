@@ -4,17 +4,22 @@
     <h2>Select a game:</h2>
     <div id="games-container">
       <picture-game-select></picture-game-select>
+      <under-construction></under-construction>
+      <under-construction></under-construction>
     </div>
   </div>
 </template>
 
 <script>
+import UnderConstruction from './UnderConstruction.vue'
 import PictureGameSelect from './PictureGameSelect.vue'
 import NavBar from './NavBar.vue'
 export default {
   name: 'play',
   components: {
-    'nav-bar': NavBar
+    'nav-bar': NavBar,
+    'picture-game-select': PictureGameSelect,
+    'under-construction': UnderConstruction,
   }
 }
 </script>
@@ -33,5 +38,6 @@ export default {
 #games-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 </style>

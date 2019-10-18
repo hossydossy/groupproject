@@ -1,12 +1,12 @@
 <template lang="html">
   <div class="container">
-    <h1>Picture Game</h1>
+    <h1>Under Construction</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'picture-game-select',
+  name: 'under-construction',
 }
 </script>
 
