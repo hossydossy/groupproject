@@ -17,5 +17,8 @@ export default {
 <style lang="css" scoped>
 button{
   margin: 20px auto 20px auto;
+  border-radius: 5px;
+  height: 50px;
+  width: 150px;
 }
 </style>

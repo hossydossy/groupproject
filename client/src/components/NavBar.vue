@@ -15,11 +15,12 @@ export default {
 </script>
 
 <style lang="css"scoped>
-ul{
+ul, li{
   text-decoration: none;
 }
 .container{
   display: inline-flex;
   flex-direction: column;
+  background-color: White;
 }
 </style>

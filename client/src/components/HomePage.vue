@@ -30,8 +30,7 @@ export default {
   text-align: center;
 }
 
-/* #bg{
-  background-image: url("/public/home-background.jpg");
-  background-size: cover; */
-/* } */
+h1 {
+  color: White;
+}
 </style>

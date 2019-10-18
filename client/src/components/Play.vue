@@ -9,11 +9,6 @@
       <under-construction></under-construction>
     </div>
   </div>
-  <!-- <div class="main-container" v-if="playPG">
-    <div id="games-container">
-      <picture-game></picture-game>
-    </div>
-  </div> -->
 </div>
 </template>
 
@@ -35,6 +30,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
+h2 {
+  color: White;
+}
 .main-container {
   display: flex;
   flex-direction: column;

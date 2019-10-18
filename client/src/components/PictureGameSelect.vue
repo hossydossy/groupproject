@@ -20,5 +20,6 @@ export default {
 .container {
   border: 1px solid Black;
   width: 30%;
+  background-color: White;
 }
 </style>

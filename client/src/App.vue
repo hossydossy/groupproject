@@ -1,5 +1,5 @@
 <template lang="html">
-<div>
+<div class="bg">
   <home-page v-if="!initialised"></home-page>
   <play v-if="initialised && !playPG"></play>
 </div>
@@ -7,11 +7,7 @@
 
 <script>
 import { eventBus } from '@/main.js';
-import PictureGame from './components/PictureGame.vue';
-import PictureGameSelect from './components/PictureGameSelect.vue';
-import CallToAction from './components/CallToAction.vue';
 import HomePage from './components/HomePage.vue';
-import NavBar from './components/NavBar.vue';
 import Play from './components/Play.vue';
 export default {
   name: 'app',
@@ -23,11 +19,7 @@ export default {
   },
   components: {
     'home-page': HomePage,
-    'call-to-action': CallToAction,
-    'nav-bar': NavBar,
     'play': Play,
-    'picture-game': PictureGame,
-    'picture-game-select': PictureGameSelect,
   },
   mounted() {
     eventBus.$on('select-game', (initialised) => {
@@ -41,4 +33,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  .bg{
+    background-image: url("../public/background.jpg");
+    background-size: cover;
+    height: 100%
+  }
 </style>
