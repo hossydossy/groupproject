@@ -25,7 +25,7 @@ export default {
     'play': Play,
   },
   mounted() {
-    eventBus.$on('start-game', (started) => {
+    eventBus.$on('select-game', (started) => {
       this.initialised = started
     });
   }

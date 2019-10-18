@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import { eventBus } from '@/main.js';
 import NavBar from './NavBar.vue'
 import CallToAction from './CallToAction.vue';
 export default {

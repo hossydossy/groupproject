@@ -1,6 +1,7 @@
 <template lang="html">
   <div class="main-container">
     <nav-bar></nav-bar>
+  <div>
     <h2>Select a game:</h2>
     <div id="games-container">
       <picture-game-select></picture-game-select>
@@ -8,12 +9,19 @@
       <under-construction></under-construction>
     </div>
   </div>
+  <div class="main-container">
+    <div id="games-container">
+      <picture-game></picture-game>
+    </div>
+  </div>
+</div>
 </template>
 
 <script>
-import UnderConstruction from './UnderConstruction.vue'
-import PictureGameSelect from './PictureGameSelect.vue'
-import NavBar from './NavBar.vue'
+import PictureGame from './PictureGame.vue';
+import UnderConstruction from './UnderConstruction.vue';
+import PictureGameSelect from './PictureGameSelect.vue';
+import NavBar from './NavBar.vue';
 export default {
   name: 'play',
   components: {

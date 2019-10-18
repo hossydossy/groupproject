@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="container">
+  <div class="container" v-on:click="playPictureGame">
     <h1>Picture Game</h1>
   </div>
 </template>

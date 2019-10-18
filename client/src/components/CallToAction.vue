@@ -6,14 +6,9 @@
 import { eventBus } from '@/main.js';
 export default {
   name: 'call-to-action',
-  data() {
-    return {
-      started: false
-    }
-  },
   methods: {
     startGame: function(){
-      eventBus.$emit('start-game', this.started = true)
+      eventBus.$emit('select-game', this.initialised = true)
     }
   }
 }
