@@ -2,11 +2,14 @@
   <div class="main-container">
     <nav-bar></nav-bar>
     <h2>Select a game:</h2>
+    <div id="games-container">
+      <picture-game-select></picture-game-select>
+    </div>
   </div>
 </template>
 
 <script>
-import PictureGame from './PictureGame.vue'
+import PictureGameSelect from './PictureGameSelect.vue'
 import NavBar from './NavBar.vue'
 export default {
   name: 'play',
@@ -26,5 +29,9 @@ export default {
   background-size: cover; */
   height: 100%;
   text-align: center;
+}
+#games-container {
+  display: flex;
+  flex-direction: row;
 }
 </style>
