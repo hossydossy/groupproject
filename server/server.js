@@ -12,11 +12,10 @@ const createRouter = require('./helpers/create_router.js');
 
 MongoClient.connect('mongodb://localhost:27017')
 .then((client) => {
-  const db = client.db()
-  client.db('##########');
-  const ########## = db.collection('##########');
-  const ########## = createRouter(##########);
-  app.use('/api/##########', ##########);
+  const db = client.db('countries')
+  const countryCollections = db.collection('countries_details');
+  const countryRouter = createRouter(countryCollections);
+  app.use('/api/countries', countryRouter);
 })
 .catch(console.err);
 
