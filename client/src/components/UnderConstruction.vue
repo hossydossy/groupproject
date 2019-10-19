@@ -15,5 +15,6 @@ export default {
   border: 1px solid Black;
   width: 30%;
   background-color: White;
+  border-radius: 10px;
 }
 </style>

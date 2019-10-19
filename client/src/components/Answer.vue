@@ -13,13 +13,14 @@ export default {
 <style lang="css" scoped>
 .container {
   border: 1px solid Black;
+  border-radius: 10px;
   width: 30%;
   background-color: White;
-  margin: 20px auto 20px auto;
+  margin: 80px auto 40px auto;
   display: flex;
 
 }
 h3 {
-  margin: 20px auto 20px auto;
+  margin: 50px auto 50px auto;
 }
 </style>
