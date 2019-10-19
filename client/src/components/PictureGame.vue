@@ -1,11 +1,13 @@
 <template lang="html">
   <div class="main-container">
-    <nav-bar></nav-bar>
+    <!-- <nav-bar></nav-bar> -->
     <h1>Picture Game</h1>
     <question></question>
-    <answer></answer>
-    <answer></answer>
-    <answer></answer>
+    <div class="container">
+      <answer></answer>
+      <answer></answer>
+      <answer></answer>
+    </div>
   </div>
 </template>
 
@@ -32,6 +34,10 @@ export default {
     flex-direction: column;
     height: 100%;
     text-align: center;
-    margin-left: 15%;
+    /* margin-left: 15%; */
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
   }
 </style>

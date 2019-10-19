@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="container">
-    <h3>Question</h3>
+    <img :src="`images/mkd_03.jpg`"></img>
   </div>
 </template>
 
@@ -13,8 +13,16 @@ export default {
 <style lang="css" scoped>
 .container {
   border: 1px solid Black;
-  width: 30%;
-  background-color: White;
   margin: 20px auto 20px auto;
+  display: flex;
+}
+img{
+  /* width: 100%; */
+  /* align-items: center; */
+}
+h1{
+  color: White;
+  text-align: center;
+  font-weight: bold;
 }
 </style>

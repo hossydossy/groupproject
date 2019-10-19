@@ -16,5 +16,10 @@ export default {
   width: 30%;
   background-color: White;
   margin: 20px auto 20px auto;
+  display: flex;
+
+}
+h3 {
+  margin: 20px auto 20px auto;
 }
 </style>

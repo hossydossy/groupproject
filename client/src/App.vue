@@ -37,9 +37,8 @@ export default {
 
 <style lang="css" scoped>
   .bg{
-    background-image: url("../public/background.jpg");
+    background-image: url("../public/images/background.jpg");
     background-size: cover;
     height: 100%;
-    margin-left: 15%;
   }
 </style>

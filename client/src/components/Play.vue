@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="main-container">
-    <nav-bar></nav-bar>
+    <!-- <nav-bar></nav-bar> -->
   <div>
     <h2>Select a game:</h2>
     <div id="games-container">
@@ -38,7 +38,7 @@ h2 {
   flex-direction: column;
   height: 100%;
   text-align: center;
-  margin-left: 15%;
+  /* margin-left: 15%; */
 }
 #games-container {
   display: flex;
