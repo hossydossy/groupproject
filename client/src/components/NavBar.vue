@@ -24,6 +24,7 @@ export default {
   background-color: White; /* White*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 80px; /* Place content 50px from the top */
+
 }
 a {
   padding: 8px 8px 8px 32px;

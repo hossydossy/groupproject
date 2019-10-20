@@ -10,14 +10,28 @@
 import { eventBus } from '@/main.js';
 import HomePage from './components/HomePage.vue';
 import Play from './components/Play.vue';
-import PictureGame from './components/PictureGame.vue'
+import PictureGame from './components/PictureGame.vue';
+
 export default {
   name: 'app',
-  data(){
+  data() {
     return {
       initialised: false,
       playPG: false,
-    };
+      countries: [],
+      flags: []
+    }
+  },
+  methods: {
+      getCountries(){
+        return fetch("http://localhost:3000/api/countries/")
+        .then(res => res.json())
+      .then(data => this.countries = data)
+    },
+
+    //   getFlags(){
+    //   for (this.countries.length - 1) this.flags.push(this.countries.flag)
+    // }
   },
   components: {
     'home-page': HomePage,
@@ -25,6 +39,8 @@ export default {
     'picture-game': PictureGame,
   },
   mounted() {
+    this.getCountries();
+    // this.getFlags();
     eventBus.$on('select-game', (initialised) => {
       this.initialised = initialised;
     });

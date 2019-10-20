@@ -15,29 +15,31 @@
 import NavBar from './NavBar.vue';
 import Question from './Question.vue';
 import Answer from './Answer.vue';
+import RandomFlag from './RandomFlag.vue';
+
 export default {
   name: 'picture-game',
   components: {
     'nav-bar': NavBar,
     'question': Question,
     'answer': Answer,
+    'random-flag': RandomFlag
   }
 }
 </script>
 
 <style lang="css" scoped>
-  h1{
-    color: White;
-  }
-  .main-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    text-align: center;
-    /* margin-left: 15%; */
-  }
-  .container {
-    display: flex;
-    flex-direction: row;
-  }
+h1{
+  color: White;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+}
 </style>
