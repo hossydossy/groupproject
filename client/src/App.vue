@@ -1,9 +1,9 @@
 <template lang="html">
-<div class="bg">
-  <home-page v-if="!initialised"></home-page>
-  <play v-if="initialised && !playPG"></play>
-  <picture-game v-if="initialised && playPG"></picture-game>
-</div>
+  <div class="bg">
+    <home-page v-if="!initialised"></home-page>
+    <play v-if="initialised && !playPG"></play>
+    <picture-game v-if="initialised && playPG"></picture-game>
+  </div>
 </template>
 
 <script>
@@ -19,44 +19,45 @@ export default {
       initialised: false,
       playPG: false,
       countries: [],
-      flags: []
+      flags: [],
+      randomFlag: []
     }
   },
   methods: {
-      getCountries(){
-        return fetch("http://localhost:3000/api/countries/")
-        .then(res => res.json())
+    getCountries(){
+      return fetch("http://localhost:3000/api/countries/")
+      .then(res => res.json())
       .then(data => this.countries = data)
     },
 
     getFlags(){
       return fetch("http://localhost:3000/api/countries/")
       .then(res => res.json())
-    .then(data => this.countries.flag = data)
+      .then(data => this.flags = data)
     }
   },
-  components: {
-    'home-page': HomePage,
-    'play': Play,
-    'picture-game': PictureGame,
-  },
-  mounted() {
-    this.getCountries();
-    this.getFlags();
-    eventBus.$on('select-game', (initialised) => {
-      this.initialised = initialised;
-    });
-    eventBus.$on('start-game', (playPG) => {
-      this.playPG = playPG;
-    });
-  }
+components: {
+  'home-page': HomePage,
+  'play': Play,
+  'picture-game': PictureGame,
+},
+mounted() {
+  this.getCountries();
+  this.getFlags();
+  eventBus.$on('select-game', (initialised) => {
+    this.initialised = initialised;
+  });
+  eventBus.$on('start-game', (playPG) => {
+    this.playPG = playPG;
+  });
+}
 }
 </script>
 
 <style lang="css" scoped>
-  .bg{
-    background-image: url("../public/images/background.jpg");
-    background-size: cover;
-    height: 100%;
-  }
+.bg{
+  background-image: url("../public/images/background.jpg");
+  background-size: cover;
+  height: 100%;
+}
 </style>

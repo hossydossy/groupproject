@@ -13,15 +13,17 @@ export default {
   data(){
     return {
       randomFlag: null
-  }
-},
-  methods: {
-        getRandomFlag(flags, path) {
-        path = this.countries.flag();
-        var num = Math.floor( Math.random() * flags.length );
-        var img = flags[ num ];
-        return img;
     }
+  },
+  methods: {
+    getRandomFlag(min, max) {
+      indexPoint = Math.random() * (max - min) + min;
+      thisFlag = countries[indexPoint].flag;
+      this.randomFlag.push(thisFlag);
+    }
+  },
+  mounted(){
+    this.getRandomFlag(0,53);
   }
 }
 </script>

@@ -1,17 +1,17 @@
 <template lang="html">
   <div class="container">
-    <img :src="`images/che_01.jpg`"></img>
+    <random-flag :src="RandomFlag"></random-flag>
   </div>
 </template>
 
 <script>
-// import RandomFlag from './RandomFlag.vue';
+import RandomFlag from './RandomFlag.vue';
 
 export default {
   name: 'question',
-  // components: {
-  //   'random-flag': RandomFlag
-  // }
+  components: {
+    'random-flag': RandomFlag
+  },
 }
 </script>
 
