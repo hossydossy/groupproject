@@ -8,13 +8,11 @@
 </template>
 
 <script>
-import NavBar from './NavBar.vue'
 import CallToAction from './CallToAction.vue';
 export default {
   name: "home-page",
   components: {
     'call-to-action': CallToAction,
-    'nav-bar': NavBar,
   }
 }
 </script>
