@@ -1,18 +1,19 @@
 <template lang="html">
-  <div class="container" v-on:click="playPictureGame">
+  <div class="container" v-on:click="playBingoGame">
     <!-- <img :src="`images/gbr_03.jpg`"></img> -->
     <h1>Countries of the World</h1>
-    <h2>Picture Game</h2>
+    <h2>Bingo Game</h2>
   </div>
 </template>
 
 <script>
 import { eventBus } from '@/main.js';
 export default {
-  name: 'picture-game-select',
+  name: 'bingo-game-select',
+  // props: ['countries'],
   methods: {
-    playPictureGame: function(){
-      eventBus.$emit('start-game-picture', this.playPG = true)
+    playBingoGame: function(){
+      eventBus.$emit('start-game-bingo', this.playBG = true)
     }
   }
 }
@@ -20,7 +21,6 @@ export default {
 
 <style lang="css" scoped>
 .container {
-  /* border: 1px solid Black; */
   width: 30%;
   background-color: White;
   border-radius: 10px;

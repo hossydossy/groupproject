@@ -1,26 +1,40 @@
 <template lang="html">
   <div class="main-container">
-    <!-- <nav-bar></nav-bar> -->
     <h1>Picture Game</h1>
-    <question></question>
-    <div class="container">
-      <answer></answer>
-      <answer></answer>
-      <answer></answer>
-    </div>
+    <!-- <continent-select v-if="!selectedContinent"></continent-select>
+      <div v-if="selectedContinent === 'Europe'"> -->
+      <div>
+        <question></question>
+        <div class="container">
+          <answer></answer>
+          <answer></answer>
+          <answer></answer>
+        </div>
+      </div>
   </div>
 </template>
 
 <script>
-import NavBar from './NavBar.vue';
+import { eventBus } from '@/main.js';
+import ContinentSelect from './ContinentSelect.vue';
 import Question from './Question.vue';
 import Answer from './Answer.vue';
 export default {
   name: 'picture-game',
+  data() {
+    return {
+      selectedContinent: '',
+    }
+  },
   components: {
-    'nav-bar': NavBar,
+    'continent-select': ContinentSelect,
     'question': Question,
     'answer': Answer,
+  },
+  mounted() {
+    eventBus.$on('select-continent', (selectedContinent) => {
+      this.selectedContinent = selectedContinent;
+    });
   }
 }
 </script>
@@ -34,7 +48,6 @@ export default {
     flex-direction: column;
     height: 100%;
     text-align: center;
-    /* margin-left: 15%; */
   }
   .container {
     display: flex;

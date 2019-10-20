@@ -1,6 +1,5 @@
 <template lang="html">
   <div class="main-container">
-    <!-- <nav-bar></nav-bar> -->
     <h1>Countries of the World</h1>
     <h2>Educational App for Children</h2>
     <call-to-action></call-to-action>
@@ -8,13 +7,11 @@
 </template>
 
 <script>
-import NavBar from './NavBar.vue'
 import CallToAction from './CallToAction.vue';
 export default {
   name: "home-page",
   components: {
     'call-to-action': CallToAction,
-    'nav-bar': NavBar,
   }
 }
 </script>
