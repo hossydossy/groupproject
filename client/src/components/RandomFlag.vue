@@ -11,8 +11,10 @@ import { eventBus } from '@/main.js';
 export default {
   name: 'random-flag',
   data(){
-    return randomFlag: null;
+    return {
+      randomFlag: null
   }
+},
   methods: {
         getRandomFlag(flags, path) {
         path = this.countries.flag();

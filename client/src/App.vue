@@ -29,9 +29,11 @@ export default {
       .then(data => this.countries = data)
     },
 
-    //   getFlags(){
-    //   for (this.countries.length - 1) this.flags.push(this.countries.flag)
-    // }
+    getFlags(){
+      return fetch("http://localhost:3000/api/countries/")
+      .then(res => res.json())
+    .then(data => this.countries.flag = data)
+    }
   },
   components: {
     'home-page': HomePage,
@@ -40,7 +42,7 @@ export default {
   },
   mounted() {
     this.getCountries();
-    // this.getFlags();
+    this.getFlags();
     eventBus.$on('select-game', (initialised) => {
       this.initialised = initialised;
     });
