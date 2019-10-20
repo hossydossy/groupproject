@@ -1,8 +1,8 @@
 <template lang="html">
   <div class="main-container">
     <!-- <nav-bar></nav-bar> -->
-    <h1>Countries of the World</h1>
-    <h2>Educational App for Children</h2>
+    <h1>Explore the World</h1>
+    <h2>Play and Learn</h2>
     <call-to-action></call-to-action>
   </div>
 </template>
