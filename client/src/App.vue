@@ -24,7 +24,6 @@ import Play from './components/Play.vue';
 import PictureGame from './components/PictureGame.vue';
 import MapGame from './components/MapGame.vue';
 import LearnCountry from './components/LearnCountry.vue';
-import Game1 from './components/Game1.vue';
 
 export default {
   name: 'app',
@@ -48,14 +47,13 @@ export default {
     'picture-game': PictureGame,
     'map-game': MapGame,
     "learn-country": LearnCountry,
-    "game-1": Game1
   },
   methods: {
     loadCountries(option) {
       this.menuOption = option;
-      // fetch(`http://localhost:3000/api/countries`)
-      //   .then(response => response.json())
-      //   .then(apiResponse => this.countries = apiResponse)
+      fetch(`http://localhost:3000/api/countries`)
+        .then(response => response.json())
+        .then(apiResponse => this.countries = apiResponse)
     }
   },
   mounted() {

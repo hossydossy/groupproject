@@ -1,13 +1,13 @@
 <template lang="html">
-  <div>
+  <div class="main-container">
     <!-- <nav-bar></nav-bar> -->
     <h1>Top Tourist Attractions</h1>
-    <div class="main-container">
+    <!-- <div class="container"> -->
       <countries-select :countries="countries"></countries-select>
       <tourist-attraction-detail :country="selectedCountry"></tourist-attraction-detail>
       <p>Next Image</p>
       <p>Previous Image</p>
-    </div>
+    <!-- </div> -->
   </div>
 </template>
 
@@ -18,9 +18,10 @@ import TouristAttractionDetail from './TouristAttractionDetail.vue';
 import NavBar from './NavBar.vue';
 export default {
   name: 'learn-tourist-attractions',
+  props: ['countries'],
   data() {
     return {
-      countries: [],
+      // countries: [],
       selectedCountry: null,
     }
   },
@@ -28,16 +29,15 @@ export default {
     'countries-select': CountriesSelect,
     'tourist-attraction-detail': TouristAttractionDetail,
   },
-  methods: {
-    getCountries() {
-      fetch(`http://localhost:3000/api/countries`)
-        .then(response => response.json())
-        .then(apiResponse => this.countries = apiResponse)
-    }
-  },
+  // methods: {
+  //   getCountries() {
+  //     fetch(`http://localhost:3000/api/countries`)
+  //       .then(response => response.json())
+  //       .then(apiResponse => this.countries = apiResponse)
+  //   }
+  // },
   mounted() {
-    this.getCountries()
-
+    // this.getCountries()
     eventBus.$on('country-selected', (country) => {
       this.selectedCountry = country
     })
@@ -49,7 +49,7 @@ export default {
   h1{
     color: Black;
   }
-  .main-container {
+  /* .main-container {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -58,10 +58,10 @@ export default {
     border-radius: 8px;
     -webkit-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
     -moz-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
-    box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
+    box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75); */
     /* margin-left: 15%; */
-  }
-  .container {
+  /* } */
+  /* .container {
     display: flex;
     flex-direction: row;
     text-align: center;
@@ -69,6 +69,6 @@ export default {
     border-radius: 8px;
     -webkit-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
     -moz-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
-    box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
-  }
+    box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75); */
+  /* } */
 </style>
