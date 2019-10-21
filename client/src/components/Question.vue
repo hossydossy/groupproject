@@ -13,15 +13,6 @@ export default {
   components: {
     'random-flag': RandomFlag
   },
-  // data (){
-  //   country: null,
-  // },
-  // computed: {
-    // country: function() {
-    //   const indexCountry = Math.floor(Math.random() * this.countries.length - 1);
-    //   return this.countries[indexCountry];
-    // }
-  // },
 }
 </script>
 

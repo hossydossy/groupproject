@@ -1,24 +1,25 @@
 <template lang="html">
   <section id="answers">
-    <div class="container">
+    <div class="container" v-if="answerOptions[2]">
       <div class="divider"/>
-      <h3> {{answerOptions[0].name}} </h3>
+      <h3 v-on:click="answerClicked(answerOptions[0])"> {{answerOptions[0].name}} </h3>
       <div class="divider"/>
-      <h3> {{answerOptions[1].name}} </h3>
+      <h3 v-on:click="answerClicked(answerOptions[1])"> {{answerOptions[1].name}} </h3>
       <div class="divider"/>
-      <h3> {{answerOptions[2].name}} </h3>
+      <h3 v-on:click="answerClicked(answerOptions[2])"> {{answerOptions[2].name}} </h3>
     </div>
   </section>
 </template>
 
 <script>
-
+import { eventBus } from '@/main.js';
 export default {
   name: 'answer',
   props: ['countries', 'correctAnswer'],
   data(){
     return {
-      answerOptions: []
+      answerOptions: [],
+      quizScore: 0
     }
   },
   methods: {
@@ -37,6 +38,17 @@ export default {
 
     randomiseAnswers(){
       this.answerOptions.sort(() => Math.random() - 0.5);
+    },
+
+    answerClicked(country) {
+      // check if answer is correctAnswer
+      if (country === this.correctAnswer)
+      eventBus.$emit('answer-clicked', this.quizScore += 1)
+      else {
+      eventBus.$emit('answer-clicked', this.quizScore += 0)
+      }
+      // emit this info on eventBus route answer-clicked
+      // emit regardless if true or false
     }
   },
   mounted(){

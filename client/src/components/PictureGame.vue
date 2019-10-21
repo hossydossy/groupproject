@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { eventBus } from '@/main.js';
 import NavBar from './NavBar.vue';
 import Question from './Question.vue';
 import Answer from './Answer.vue';
@@ -25,8 +26,28 @@ export default {
     'answer': Answer,
     'random-flag': RandomFlag
   },
+  data(){
+    return {
+      quizScore: []
+    }
+  },
   computed: {
     country: function() {
+      const indexCountry = Math.floor(Math.random() * this.countries.length - 1);
+      return this.countries[indexCountry];
+    }
+  },
+  mounted() {
+
+    eventBus.$on('answer-clicked', this.quizScore += 1)
+    // pick up ON eventBus route answer-clicked
+    // push result to this.quizScore
+    // give the user a new question
+    // keep track of number of questions answered
+    // if number of questions answered == 10, show result to user
+  },
+  methods: {
+    getRandomCountry: function() {
       const indexCountry = Math.floor(Math.random() * this.countries.length - 1);
       return this.countries[indexCountry];
     }
@@ -57,4 +78,5 @@ h1{
   height:auto;
   display:inline-block;
 }
+
 </style>
