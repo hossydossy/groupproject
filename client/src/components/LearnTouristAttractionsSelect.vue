@@ -11,7 +11,7 @@ export default {
   name: 'tourist-attractions-select',
   methods: {
     learnTouristAttractions: function(){
-      eventBus.$emit('tourist-attractions', this.touristAttractions = true)
+      eventBus.$emit('go-to', this.menuOptions = 'learnTD')
     }
   }
 }

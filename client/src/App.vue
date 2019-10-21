@@ -30,13 +30,6 @@ export default {
   name: 'app',
   data() {
     return {
-      // playInitialised: false,
-      // playPG: false,
-      // playMG: false,
-      // playBG: false,
-      // learnInitialised: false,
-      // learnCountries: false,
-      // touristAttractions: false,
       countries: [],
       // selectedCountry: null,
       country: null,
@@ -74,21 +67,6 @@ export default {
     eventBus.$on('go-to', (option) => {
       this.menuOption = option;
     });
-    // eventBus.$on('play-pg', (playPG) => {
-    //   this.playPG = playPG;
-    // });
-    // eventBus.$on('play-mg', (playMG) => {
-    //   this.playMG = playMG;
-    // });
-    // eventBus.$on('go-to-learn', (learnInitialised) => {
-    //   this.learnInitialised = learnInitialised;
-    // });
-    // eventBus.$on('learn-countries', (learnCountries) => {
-    //   this.learnCountries = learnCountries;
-    // });
-    // eventBus.$on('tourist-attractions', (touristAttractions) => {
-    //   this.touristAttractions = touristAttractions;
-    // });
   }
 }
 </script>
