@@ -1,0 +1,42 @@
+<template lang="html">
+  <div class="container">
+    <label for='select-team-dropdown'>Select a character:
+      <select id='select-team-dropdown' v-model='selectedCharacter' v-on:change='handleChange'>
+        <option value='' disabled selected>Select a character</option>
+        <option v-for='(character, index) in characters'
+        :character='character'
+        :key='index'
+        :value='character'>{{character.name}}</option>
+      </select>
+    </label>
+  </div>
+</template>
+
+<script>
+import { eventBus } from '@/main.js';
+export default {
+  name: 'select-team-dropdown',
+  props: ['characters'],
+  data() {
+    return {
+      selectedCharacter: null
+    }
+  },
+  methods: {
+    handleChange: function() {
+      eventBus.$emit('character-selected', this.selectedCharacter)
+    }
+  }
+}
+</script>
+
+<style lang="css" scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+label, select {
+  margin: auto;
+}
+</style>

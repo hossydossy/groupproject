@@ -1,11 +1,10 @@
 <template lang="html">
-  <div class="main-container">
+  <div>
     <!-- <nav-bar></nav-bar> -->
     <h1>Top Tourist Attractions</h1>
-    <h2>Select a Country</h2>
-    <div class="container">
-      <h2>Image</h2>
-      <p>Details</p>
+    <div class="main-container">
+      <countries-select :countries="countries"></countries-select>
+      <tourist-attraction-detail :country="selectedCountry"></tourist-attraction-detail>
       <p>Next Image</p>
       <p>Previous Image</p>
     </div>
@@ -13,17 +12,42 @@
 </template>
 
 <script>
+import { eventBus } from '@/main.js'
+import CountriesSelect from './CountriesSelect.vue';
+import TouristAttractionDetail from './TouristAttractionDetail.vue';
 import NavBar from './NavBar.vue';
 export default {
   name: 'learn-tourist-attractions',
+  data() {
+    return {
+      countries: [],
+      selectedCountry: null,
+    }
+  },
   components: {
+    'countries-select': CountriesSelect,
+    'tourist-attraction-detail': TouristAttractionDetail,
+  },
+  methods: {
+    getCountries() {
+      fetch(`http://localhost:3000/api/countries`)
+        .then(response => response.json())
+        .then(apiResponse => this.countries = apiResponse)
+    }
+  },
+  mounted() {
+    this.getCountries()
+
+    eventBus.$on('country-selected', (country) => {
+      this.selectedCountry = country
+    })
   }
 }
 </script>
 
 <style lang="css" scoped>
   h1{
-    color: White;
+    color: Black;
   }
   .main-container {
     display: flex;

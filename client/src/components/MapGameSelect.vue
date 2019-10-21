@@ -1,17 +1,17 @@
 <template lang="html">
-  <div class="container" v-on:click="playPictureGame">
-    <h1>Picture Game</h1>
-    <img :src="`images/gbr_03.jpg`"></img>
+  <div class="container" v-on:click="playMapGame">
+    <h1>Map Game</h1>
+    <img :src="`images/world-map.jpg`"></img>
   </div>
 </template>
 
 <script>
 import { eventBus } from '@/main.js';
 export default {
-  name: 'picture-game-select',
+  name: 'map-game-select',
   methods: {
-    playPictureGame: function(){
-      eventBus.$emit('play-pg', this.playPG = true)
+    playMapGame: function(){
+      eventBus.$emit('play-mg', this.playMG = true)
     }
   }
 }

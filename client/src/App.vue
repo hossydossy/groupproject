@@ -1,8 +1,9 @@
 <template lang="html">
 <div class="bg">
   <home-page v-if="!playInitialised && !learnInitialised"></home-page>
-  <play v-if="playInitialised && !playPG && !playBG"></play>
-  <picture-game v-if="playInitialised && playPG && !playBG"></picture-game>
+  <play v-if="playInitialised && !playPG && !playMG"></play>
+  <!-- <picture-game v-if="playInitialised && playPG && !playBG && !playMG"></picture-game> -->
+  <!-- <map-game v-if="playInitialised && !playPG && playMG"></map-game> -->
   <learn v-if="learnInitialised && !learnCountries && !touristAttractions"></learn>
   <!-- <learn-country></learn-country> -->
   <learn-tourist-attractions v-if="learnInitialised && touristAttractions && !learnCountries"></learn-tourist-attractions>
@@ -16,19 +17,27 @@ import HomePage from './components/HomePage.vue';
 import GoToLearn from './components/GoToLearn.vue';
 import Learn from './components/Learn.vue';
 import LearnTouristAttractions from './components/LearnTouristAttractions';
+import CountriesSelect from './components/CountriesSelect';
+import TouristAttractionDetail from './components/TouristAttractionDetail';
 import GoToPlay from './components/GoToPlay.vue';
 import Play from './components/Play.vue';
 import PictureGame from './components/PictureGame.vue';
+import MapGame from './components/MapGame.vue';
 export default {
   name: 'app',
   data() {
     return {
       playInitialised: false,
       playPG: false,
-      playBG: false,
+      playMG: false,
+      // playBG: false,
       learnInitialised: false,
       learnCountries: false,
       touristAttractions: false,
+      countries: [],
+      selectedCountry: null,
+      country: null,
+      menuOption: null,
     };
   },
   components: {
@@ -36,16 +45,30 @@ export default {
     'go-to-learn': GoToLearn,
     'learn': Learn,
     'learn-tourist-attractions': LearnTouristAttractions,
+    'countries-select': CountriesSelect,
+    'tourist-attraction-detail': TouristAttractionDetail,
     'go-to-play': GoToPlay,
     'play': Play,
     'picture-game': PictureGame,
+    'map-game': MapGame,
+  },
+  methods: {
+    loadCountries(option) {
+      this.menuOption = option;
+      fetch(`http://localhost:3000/api/countries`)
+        .then(response => response.json())
+        .then(apiResponse => this.countries = apiResponse)
+    }
   },
   mounted() {
     eventBus.$on('go-to-play', (playInitialised) => {
       this.playInitialised = playInitialised;
     });
-    eventBus.$on('start-game', (playPG) => {
+    eventBus.$on('play-pg', (playPG) => {
       this.playPG = playPG;
+    });
+    eventBus.$on('play-mg', (playMG) => {
+      this.playMG = playMG;
     });
     eventBus.$on('go-to-learn', (learnInitialised) => {
       this.learnInitialised = learnInitialised;

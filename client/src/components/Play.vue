@@ -5,8 +5,8 @@
     <h2>Select a game:</h2>
     <div id="games-container">
       <picture-game-select></picture-game-select>
-      <under-construction></under-construction>
-      <under-construction></under-construction>
+      <map-game-select></map-game-select>
+      <!-- <under-construction></under-construction> -->
     </div>
   </div>
 </div>
@@ -15,7 +15,7 @@
 <script>
 import { eventBus } from '@/main.js'
 import PictureGame from './PictureGame.vue';
-import UnderConstruction from './UnderConstruction.vue';
+import MapGameSelect from './MapGameSelect.vue';
 import PictureGameSelect from './PictureGameSelect.vue';
 import NavBar from './NavBar.vue';
 export default {
@@ -24,7 +24,7 @@ export default {
     'picture-game': PictureGame,
     'nav-bar': NavBar,
     'picture-game-select': PictureGameSelect,
-    'under-construction': UnderConstruction,
+    'map-game-select': MapGameSelect,
   }
 }
 </script>
