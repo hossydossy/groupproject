@@ -8,7 +8,7 @@ export default {
   name: 'go-to-learn',
   methods: {
     goToLearn: function(){
-      eventBus.$emit('go-to-learn', this.learnInitialised = true)
+      eventBus.$emit('go-to', this.menuOption = 'learn')
     }
   }
 }

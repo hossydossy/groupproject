@@ -4,14 +4,9 @@
   <play v-if="menuOption === 'play'" :countries="countries" v-on:click="loadCountries('play')"></play>
   <picture-game v-if="menuOption === 'playPG'" ></picture-game>
   <map-game v-if="menuOption === 'playMG'" :countries="countries"></map-game>
-  <learn v-if="menuOption === 'learn'" :countries="countries"></learn>
-  <!-- <learn-country></learn-country> -->
-  <!-- <learn-tourist-attractions v-if="learnInitialised && touristAttractions && !learnCountries"></learn-tourist-attractions> -->
-
-  <game-1 v-if="menuOption == 'game'" :countries="countries"/>
-  <learn-country v-if="menuOption == 'learn'" :countries="countries"/>
-  <button type="button" name="button" v-on:click="loadCountries('learn')">Learn</button>
-  <button type="button" name="button" v-on:click="loadCountries('game')">Game</button>
+  <learn v-if="menuOption === 'learn'" :countries="countries" v-on:click="loadCountries('learn')"></learn>
+  <learn-country v-if="menuOption === 'learnCD'" :countries="countries"></learn-country>
+  <learn-tourist-attractions v-if="menuOption === 'learnTD'" :countries="countries"></learn-tourist-attractions>
 
 </div>
 </template>

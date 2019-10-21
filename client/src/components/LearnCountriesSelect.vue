@@ -11,7 +11,7 @@ export default {
   name: 'learn-countries-select',
   methods: {
     learnCountries: function(){
-      eventBus.$emit('learn-countries', this.learnCountries = true)
+      eventBus.$emit('go-to', this.menuOption = 'learnCD')
     }
   }
 }
