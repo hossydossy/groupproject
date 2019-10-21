@@ -2,7 +2,7 @@
   <div class="bg">
     <home-page v-if="!initialised"></home-page>
     <play v-if="initialised && !playPG"></play>
-    <picture-game v-if="initialised && playPG"></picture-game>
+    <picture-game :countries="countries" v-if="initialised && playPG"></picture-game>
   </div>
 </template>
 

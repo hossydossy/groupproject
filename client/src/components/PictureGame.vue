@@ -2,11 +2,10 @@
   <div class="main-container">
     <!-- <nav-bar></nav-bar> -->
     <h1>Picture Game</h1>
-    <question></question>
+    <question :country="country"></question>
+    <div class="divider"/>
     <div class="container">
-      <answer></answer>
-      <answer></answer>
-      <answer></answer>
+      <answer :countries="countries" :correctAnswer="country"></answer>
     </div>
   </div>
 </template>
@@ -19,12 +18,20 @@ import RandomFlag from './RandomFlag.vue';
 
 export default {
   name: 'picture-game',
+  props: ['countries'],
   components: {
     'nav-bar': NavBar,
     'question': Question,
     'answer': Answer,
     'random-flag': RandomFlag
+  },
+  computed: {
+    country: function() {
+      const indexCountry = Math.floor(Math.random() * this.countries.length - 1);
+      return this.countries[indexCountry];
+    }
   }
+
 }
 </script>
 
@@ -41,5 +48,13 @@ h1{
 .container {
   display: flex;
   flex-direction: row;
+
+}
+
+.divider{
+  height: 500px;
+  /* width:300px; */
+  height:auto;
+  display:inline-block;
 }
 </style>
