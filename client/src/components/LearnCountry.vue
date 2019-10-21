@@ -10,6 +10,7 @@
 
 <script>
 import LearnCountryDetails from './LearnCountryDetails.vue';
+
 export default {
   name: 'learn-country',
   props: ['countries'],
