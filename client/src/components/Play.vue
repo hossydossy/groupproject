@@ -20,6 +20,7 @@ import PictureGameSelect from './PictureGameSelect.vue';
 import NavBar from './NavBar.vue';
 export default {
   name: 'play',
+  // props: ['countries'],
   components: {
     'picture-game': PictureGame,
     'nav-bar': NavBar,

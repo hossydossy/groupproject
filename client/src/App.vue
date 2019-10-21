@@ -1,9 +1,9 @@
 <template lang="html">
 <div class="bg">
   <home-page v-if="!menuOption"></home-page>
-  <play v-if="menuOption === 'play'" :countries="countries"></play>
-  <!-- <picture-game v-if="playInitialised && playPG && !playBG && !playMG"></picture-game> -->
-  <!-- <map-game v-if="playInitialised && !playPG && playMG"></map-game> -->
+  <play v-if="menuOption === 'play'" :countries="countries" v-on:click="loadCountries('play')"></play>
+  <picture-game v-if="menuOption === 'playPG'" ></picture-game>
+  <map-game v-if="menuOption === 'playMG'" :countries="countries"></map-game>
   <learn v-if="menuOption === 'learn'" :countries="countries"></learn>
   <!-- <learn-country></learn-country> -->
   <!-- <learn-tourist-attractions v-if="learnInitialised && touristAttractions && !learnCountries"></learn-tourist-attractions> -->
@@ -55,13 +55,18 @@ export default {
   methods: {
     loadCountries(option) {
       this.menuOption = option;
-      fetch(`http://localhost:3000/api/countries`)
-        .then(response => response.json())
-        .then(apiResponse => this.countries = apiResponse)
+      // fetch(`http://localhost:3000/api/countries`)
+      //   .then(response => response.json())
+      //   .then(apiResponse => this.countries = apiResponse)
     }
   },
   mounted() {
-    eventBus.$on('go-to-play', (option) => {
+
+    fetch(`http://localhost:3000/api/countries`)
+      .then(response => response.json())
+      .then(apiResponse => this.countries = apiResponse)
+
+    eventBus.$on('go-to', (option) => {
       this.menuOption = option;
     });
     // eventBus.$on('play-pg', (playPG) => {

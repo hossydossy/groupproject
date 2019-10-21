@@ -8,7 +8,7 @@ export default {
   name: 'go-to-play',
   methods: {
     goToPlay: function(){
-      eventBus.$emit('go-to-play', this.menuOption = 'play')
+      eventBus.$emit('go-to', this.menuOption = 'play')
     }
   }
 }

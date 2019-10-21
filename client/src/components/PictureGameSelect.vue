@@ -11,7 +11,7 @@ export default {
   name: 'picture-game-select',
   methods: {
     playPictureGame: function(){
-      eventBus.$emit('play-pg', this.playPG = true)
+      eventBus.$emit('go-to', this.menuOption = 'playPG')
     }
   }
 }

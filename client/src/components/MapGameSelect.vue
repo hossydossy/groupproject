@@ -9,9 +9,10 @@
 import { eventBus } from '@/main.js';
 export default {
   name: 'map-game-select',
+  // props: ['countries'],
   methods: {
     playMapGame: function(){
-      eventBus.$emit('play-mg', this.playMG = true)
+      eventBus.$emit('go-to', this.menuOption = 'playMG')
     }
   }
 }
