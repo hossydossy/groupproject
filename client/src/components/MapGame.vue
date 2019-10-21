@@ -3,18 +3,17 @@
     <div id="map"></div>
     <div class="menu"></div>
     <div v-if='countrySelected' class="flag">
-      <img :src="countrySelected.flag" alt="">
+      <img class="flag-img":src="countrySelected.flag" alt="">
       <button v-on:click="randomFlag"type="button" name="button" class="btn">Skip</button>
     </div>
     <div class="instructions">
-      <p>Instructions</p>
-      <ul>
-        <li>Blahblahblahblah</li>
-        <li>Blahblahblahblah</li>
-        <li>Blahblahblahblah</li>
-        <li>Blahblahblahblah</li>
-      </ul>
-      <button type="button" name="button" class="btn-2">Let's Play</button>
+      <p class="title">Instructions</p>
+      <p class="body">World Flag Quiz
+How well do you know the flags of the world?  Will you be able to recognise the flags of countries like France, Germany and Cyprus?  Test your knowledge in this fun interactive map-based quiz.
+How to play:-
+Click the map on the country which relates to flag displayed.
+Good luck!</p>
+      <button type="button" name="button" @click='startGame' class="btn-2">Let's Play</button>
     </div>
   </div>
 </template>
@@ -30,15 +29,19 @@ export default {
       mapLoaded: false
     }
   },
-  updated() {
+  mounted() {
     if (this.mapLoaded == false) {
       this.displayMap(),
       this.mapLoaded = true
     }
   },
   methods: {
-    displayMap() {
+    startGame(event) {
       this.randomFlag();
+      event.target.parentElement.remove();
+    },
+    displayMap() {
+      console.log('asd');
       const center = {
         lat: 51,
         lng: 9
@@ -48,6 +51,7 @@ export default {
         center: center,
         mapTypeId: 'hybrid',
       });
+
       this.countries.map((country) => {
         const latLng = {
           lat: country.latlng[0],
@@ -64,29 +68,36 @@ export default {
       })
     },
     randomFlag() {
-      const indexCountry = Math.floor(Math.random() * this.countries.length - 1);
+      const indexCountry = Math.floor(Math.random() * this.countries.length);
       this.countrySelected = this.countries[indexCountry];
+      this.animate('.flag-img', 'bounceInDown');
     },
     checkGame(countrySelectedId) {
       if (countrySelectedId == this.countrySelected._id) {
-        alert('You WIN 🎉');
-        // confetti.start(5000);
         confetti.start(2000, 50, 200)
-        setTimeout(() => { this.randomFlag()}, 2500);
+        this.animate('.flag-img', 'flip');
+        setTimeout(() => { this.randomFlag()}, 3500);
         return;
       }
-      alert('Try again 😕');
+      this.animate('.flag-img', 'shake');
+    },
+    animate(element, animationName, callback) {
+      const node = document.querySelector(element)
+      if (node == null) {
+        return;
+      }
+      node.classList.add('animated', animationName)
+      function handleAnimationEnd() {
+          node.classList.remove('animated', animationName)
+          node.removeEventListener('animationend', handleAnimationEnd)
+
+          if (typeof callback === 'function') callback()
+      }
+      node.addEventListener('animationend', handleAnimationEnd)
     }
   },
-  // hideInstructions() {
-  //   var x = document.getElementById("instructions");
-  //   if (x.style.display === "none") {
-  //     x.style.display = "block";
-  //   } else {
-  //     x.style.display = "none";
-  //   }
-  // }
 }
+
 </script>
 
 <style lang="css" scoped>
@@ -98,60 +109,65 @@ export default {
 .wrapper {
   position: relative;
 }
-/* .menu {
-  position: absolute;
-  top: 20px;
-  left: 0px;
-  width: 150px;
-  height: 300px;
-  z-index: 500;
-  background-color: red;
-} */
+
 .flag {
   position: absolute;
-  /* bottom: 50px;
-  left: 50%;
-  right: 50%; */
   z-index: 500;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, 150%);
+  bottom: 50px;
+  margin-left: -75px;
   display: flex;
   flex-direction: column;
 }
-.flag img {
+
+.flag-img {
   width: 150px;
+  height: 100px;
   margin-left: auto;
   margin-right: auto;
 }
+
 .gm-style-mtc {
   display: none !important;
 }
+
 .btn {
   width: 150px;
+  margin-top: 10px;
   font-weight: bold;
 }
+
 .instructions {
-  width: 200px;
-  height: 200px;
-  background-color: red;
-  opacity: 0.8;
+  width: 300px;
+  background-color: grey;
+  opacity: 0.9;
   position: absolute;
   z-index: 500;
   border-radius: 8px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-.instructions p {
   color: white;
+  padding-bottom: 10px;
+}
+
+.title {
   text-align: center;
 }
+
+.hide {
+  display: none;
+}
+
+.body {
+  text-align: justify;
+  padding: 0px 10px 0px 10px;
+}
+
 .btn-2 {
   text-align: center;
   display: block;
   margin: 0 auto;
-
 }
+
 </style>
-ß
