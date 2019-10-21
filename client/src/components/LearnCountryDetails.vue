@@ -23,6 +23,7 @@
 </template>
 
 <script>
+
 export default {
   name: "learn-country-details",
   props: ['country'],
@@ -81,10 +82,12 @@ export default {
   overflow:visible;
   margin: 20px auto;
 }
+
 .country-img {
   width: 600px;
   /* border-radius: 8px 8px 0px 0px; */
 }
+
 .wrapper {
   width: 600px;
   margin: 20px auto;
@@ -95,6 +98,7 @@ export default {
   -moz-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
   box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
 }
+
 .description {
   /* display: flex; */
   width: 330px;
@@ -102,6 +106,7 @@ export default {
   float: right;
   padding-right: 10px;
 }
+
 .details {
   margin-top: 1em;
   width: 250px;
@@ -109,6 +114,7 @@ export default {
   text-align: left;
   padding-left: 10px;
 }
+
 .details p {
   margin-bottom: 4px;
   margin-top: 4px;
@@ -116,18 +122,22 @@ export default {
 .image-flag-container {
   position: relative;
 }
+
 .flag{
   width: 100px;
   position: absolute;
   right: 0px;
   /* border-top-right-radius: 8px; */
 }
+
 h3 {
   margin-top: 6px;
   margin-bottom: 6px;
 }
+
 ul {
   list-style-type:square;
   margin: 6px;
 }
+
 </style>

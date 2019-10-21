@@ -9,9 +9,15 @@
     "server:dev": "nodemon server.js",
     "seeds": "mongo < ./db/seeds.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "nodemon": "^1.19.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongodb": "^3.3.2"
   }
 }
