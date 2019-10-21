@@ -1,10 +1,20 @@
 <template lang="html">
   <div class="wrapper" v-if='countries'>
     <div id="map"></div>
-    <div class="menu">Test</div>
+    <div class="menu"></div>
     <div v-if='countrySelected' class="flag">
       <img :src="countrySelected.flag" alt="">
       <button v-on:click="randomFlag"type="button" name="button" class="btn">Skip</button>
+    </div>
+    <div class="instructions">
+      <p>Instructions</p>
+      <ul>
+        <li>Blahblahblahblah</li>
+        <li>Blahblahblahblah</li>
+        <li>Blahblahblahblah</li>
+        <li>Blahblahblahblah</li>
+      </ul>
+      <button type="button" name="button" class="btn-2">Let's Play</button>
     </div>
   </div>
 </template>
@@ -70,7 +80,17 @@ export default {
       alert('Try again 😕');
     }
 
-  }
+  },
+
+  // hideInstructions() {
+  //   var x = document.getElementById("instructions");
+  //   if (x.style.display === "none") {
+  //     x.style.display = "block";
+  //   } else {
+  //     x.style.display = "none";
+  //   }
+  // }
+
 }
 
 </script>
@@ -96,10 +116,16 @@ export default {
 
 .flag {
   position: absolute;
-  bottom: 50px;
+  /* bottom: 50px;
   left: 50%;
-  right: 50%;
+  right: 50%; */
   z-index: 500;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 150%);
+  display: flex;
+  flex-direction: column;
+
 }
 
 .flag img {
@@ -115,5 +141,32 @@ export default {
 .btn {
   width: 150px;
   font-weight: bold;
+}
+
+.instructions {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  opacity: 0.8;
+  position: absolute;
+  z-index: 500;
+  border-radius: 8px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+
+}
+
+.instructions p {
+  color: white;
+  text-align: center;
+}
+
+.btn-2 {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  
 }
 </style>
