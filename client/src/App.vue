@@ -8,6 +8,11 @@
   <!-- <learn-country></learn-country> -->
   <!-- <learn-tourist-attractions v-if="learnInitialised && touristAttractions && !learnCountries"></learn-tourist-attractions> -->
 
+  <game-1 v-if="menuOption == 'game'" :countries="countries"/>
+  <learn-country v-if="menuOption == 'learn'" :countries="countries"/>
+  <button type="button" name="button" v-on:click="loadCountries('learn')">Learn</button>
+  <button type="button" name="button" v-on:click="loadCountries('game')">Game</button>
+
 </div>
 </template>
 
@@ -23,6 +28,9 @@ import GoToPlay from './components/GoToPlay.vue';
 import Play from './components/Play.vue';
 import PictureGame from './components/PictureGame.vue';
 import MapGame from './components/MapGame.vue';
+import LearnCountry from './components/LearnCountry.vue';
+import Game1 from './components/Game1.vue';
+
 export default {
   name: 'app',
   data() {
@@ -51,6 +59,8 @@ export default {
     'play': Play,
     'picture-game': PictureGame,
     'map-game': MapGame,
+    "learn-country": LearnCountry,
+    "game-1": Game1
   },
   methods: {
     loadCountries(option) {
