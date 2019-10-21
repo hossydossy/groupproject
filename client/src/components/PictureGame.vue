@@ -39,5 +39,6 @@ export default {
   .container {
     display: flex;
     flex-direction: row;
+    text-align: center;
   }
 </style>

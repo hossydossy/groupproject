@@ -1,14 +1,14 @@
 <template lang="html">
-  <button type="button" name="Play" v-on:click="startGame">Play</button>
+  <button type="button" name="Learn" v-on:click="goToLearn">Learn</button>
 </template>
 
 <script>
 import { eventBus } from '@/main.js';
 export default {
-  name: 'call-to-action',
+  name: 'go-to-learn',
   methods: {
-    startGame: function(){
-      eventBus.$emit('select-game', this.initialised = true)
+    goToLearn: function(){
+      eventBus.$emit('go-to-learn', this.learnInitialised = true)
     }
   }
 }

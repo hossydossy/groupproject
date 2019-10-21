@@ -2,11 +2,10 @@
   <div class="main-container">
     <!-- <nav-bar></nav-bar> -->
   <div>
-    <h2>Select a game:</h2>
+    <h2>Learn more about the countries:</h2>
     <div id="games-container">
-      <picture-game-select></picture-game-select>
-      <under-construction></under-construction>
-      <under-construction></under-construction>
+      <learn-countries-select></learn-countries-select>
+      <learn-tourist-attractions-select></learn-tourist-attractions-select>
     </div>
   </div>
 </div>
@@ -14,17 +13,15 @@
 
 <script>
 import { eventBus } from '@/main.js'
-import PictureGame from './PictureGame.vue';
-import UnderConstruction from './UnderConstruction.vue';
-import PictureGameSelect from './PictureGameSelect.vue';
+import LearnCountriesSelect from './LearnCountriesSelect.vue'
+import LearnTouristAttractionsSelect from './LearnTouristAttractionsSelect.vue'
 import NavBar from './NavBar.vue';
 export default {
   name: 'play',
   components: {
-    'picture-game': PictureGame,
     'nav-bar': NavBar,
-    'picture-game-select': PictureGameSelect,
-    'under-construction': UnderConstruction,
+    'learn-countries-select': LearnCountriesSelect,
+    'learn-tourist-attractions-select': LearnTouristAttractionsSelect,
   }
 }
 </script>

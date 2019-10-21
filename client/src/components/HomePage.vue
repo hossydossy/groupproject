@@ -3,16 +3,19 @@
     <!-- <nav-bar></nav-bar> -->
     <h1>Explore the World</h1>
     <h2>Play and Learn</h2>
-    <call-to-action></call-to-action>
+    <go-to-play></go-to-play>
+    <go-to-learn></go-to-learn>
   </div>
 </template>
 
 <script>
-import CallToAction from './CallToAction.vue';
+import GoToPlay from './GoToPlay.vue';
+import GoToLearn from './GoToLearn.vue';
 export default {
   name: "home-page",
   components: {
-    'call-to-action': CallToAction,
+    'go-to-play': GoToPlay,
+    'go-to-learn': GoToLearn,
   }
 }
 </script>
@@ -36,6 +39,6 @@ h2{
 }
 
 h1, h2{
-  color: White;
+  /* color: White; */
 }
 </style>

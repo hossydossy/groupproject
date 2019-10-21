@@ -1,17 +1,17 @@
 <template lang="html">
-  <div class="container" v-on:click="playPictureGame">
-    <img :src="`images/gbr_03.jpg`"></img>
-    <h1>Picture Game</h1>
+  <div class="container" v-on:click="learnTouristAttractions">
+    <!-- <img :src="`images/gbr_03.jpg`"></img> -->
+    <h1>Top Tourist Attractions</h1>
   </div>
 </template>
 
 <script>
 import { eventBus } from '@/main.js';
 export default {
-  name: 'picture-game-select',
+  name: 'tourist-attractions-select',
   methods: {
-    playPictureGame: function(){
-      eventBus.$emit('start-game', this.playPG = true)
+    learnTouristAttractions: function(){
+      eventBus.$emit('tourist-attractions', this.touristAttractions = true)
     }
   }
 }
