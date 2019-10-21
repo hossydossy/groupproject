@@ -1,12 +1,12 @@
 <template lang="html">
 <div class="bg">
-  <home-page v-if="!playInitialised && !learnInitialised"></home-page>
-  <play v-if="playInitialised && !playPG && !playMG"></play>
+  <home-page v-if="!menuOption"></home-page>
+  <play v-if="menuOption === 'play'" :countries="countries"></play>
   <!-- <picture-game v-if="playInitialised && playPG && !playBG && !playMG"></picture-game> -->
   <!-- <map-game v-if="playInitialised && !playPG && playMG"></map-game> -->
-  <learn v-if="learnInitialised && !learnCountries && !touristAttractions"></learn>
+  <learn v-if="menuOption === 'learn'" :countries="countries"></learn>
   <!-- <learn-country></learn-country> -->
-  <learn-tourist-attractions v-if="learnInitialised && touristAttractions && !learnCountries"></learn-tourist-attractions>
+  <!-- <learn-tourist-attractions v-if="learnInitialised && touristAttractions && !learnCountries"></learn-tourist-attractions> -->
 
 </div>
 </template>
@@ -27,15 +27,15 @@ export default {
   name: 'app',
   data() {
     return {
-      playInitialised: false,
-      playPG: false,
-      playMG: false,
+      // playInitialised: false,
+      // playPG: false,
+      // playMG: false,
       // playBG: false,
-      learnInitialised: false,
-      learnCountries: false,
-      touristAttractions: false,
+      // learnInitialised: false,
+      // learnCountries: false,
+      // touristAttractions: false,
       countries: [],
-      selectedCountry: null,
+      // selectedCountry: null,
       country: null,
       menuOption: null,
     };
@@ -61,24 +61,24 @@ export default {
     }
   },
   mounted() {
-    eventBus.$on('go-to-play', (playInitialised) => {
-      this.playInitialised = playInitialised;
+    eventBus.$on('go-to-play', (option) => {
+      this.menuOption = option;
     });
-    eventBus.$on('play-pg', (playPG) => {
-      this.playPG = playPG;
-    });
-    eventBus.$on('play-mg', (playMG) => {
-      this.playMG = playMG;
-    });
-    eventBus.$on('go-to-learn', (learnInitialised) => {
-      this.learnInitialised = learnInitialised;
-    });
-    eventBus.$on('learn-countries', (learnCountries) => {
-      this.learnCountries = learnCountries;
-    });
-    eventBus.$on('tourist-attractions', (touristAttractions) => {
-      this.touristAttractions = touristAttractions;
-    });
+    // eventBus.$on('play-pg', (playPG) => {
+    //   this.playPG = playPG;
+    // });
+    // eventBus.$on('play-mg', (playMG) => {
+    //   this.playMG = playMG;
+    // });
+    // eventBus.$on('go-to-learn', (learnInitialised) => {
+    //   this.learnInitialised = learnInitialised;
+    // });
+    // eventBus.$on('learn-countries', (learnCountries) => {
+    //   this.learnCountries = learnCountries;
+    // });
+    // eventBus.$on('tourist-attractions', (touristAttractions) => {
+    //   this.touristAttractions = touristAttractions;
+    // });
   }
 }
 </script>

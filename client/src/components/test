@@ -1,42 +1,42 @@
 <template lang="html">
-  <div class="container">
-    <label for='select-team-dropdown'>Select a character:
-      <select id='select-team-dropdown' v-model='selectedCharacter' v-on:change='handleChange'>
-        <option value='' disabled selected>Select a character</option>
-        <option v-for='(character, index) in characters'
-        :character='character'
-        :key='index'
-        :value='character'>{{character.name}}</option>
-      </select>
-    </label>
+  <div id ="app">
+  <div class="wrapper">
+    <game-1 v-if="menuOption == 'game'" :countries="countries"/>
+    <button type="button" name="button" v-on:click="loadCountries('learn')">Learn</button>
+    <button type="button" name="button" v-on:click="loadCountries('game')">Game</button>
+    <learn-country v-if="menuOption == 'learn'" :countries="countries"/>
+  </div>
   </div>
 </template>
 
 <script>
-import { eventBus } from '@/main.js';
+import LearnCountry from './components/LearnCountry.vue';
+import Game1 from './components/Game1.vue';
 export default {
-  name: 'select-team-dropdown',
-  props: ['characters'],
-  data() {
+  name: 'app',
+  data(){
     return {
-      selectedCharacter: null
+      countries: [],
+      country: null,
+      menuOption: null,
     }
   },
   methods: {
-    handleChange: function() {
-      eventBus.$emit('character-selected', this.selectedCharacter)
+    loadCountries(option) {
+      this.menuOption = option;
+      fetch(`http://localhost:3000/api/countries`)
+        .then(response => response.json())
+        .then(apiResponse => this.countries = apiResponse)
     }
+  },
+  components: {
+    "learn-country": LearnCountry,
+    "game-1": Game1
+    // 'home-page': HomePage,
+    // 'call-to-action': CallToAction,
   }
 }
 </script>
 
 <style lang="css" scoped>
-.container {
-  display: flex;
-  flex-direction: column;
-}
-
-label, select {
-  margin: auto;
-}
 </style>
