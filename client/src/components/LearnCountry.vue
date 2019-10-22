@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="">
+  <div class="container">
     <select v-on:change="handleSelectedCountry">
       <option value="">Select Country</option>
       <option v-for="(country, index) in countries" :value="country._id">{{country.name}}</option>
@@ -31,4 +31,13 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.container{
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin: auto;
+  flex-direction: column;
+}
 </style>
+flex-direction: column;

@@ -75,6 +75,8 @@ export default {
   -webkit-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
   -moz-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
   box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
+  background-color: white;
+  
 }
 
 .description {
@@ -83,6 +85,7 @@ export default {
   text-align: justify;
   float: right;
   padding-right: 10px;
+
 }
 
 .details {
