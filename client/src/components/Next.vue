@@ -19,11 +19,11 @@ export default {
 button{
   margin: 20px auto 20px auto;
   border-radius: 10px;
-  height: 50px;
+  height: 35px;
   width: 150px;
   padding: 8px 8px 8px 8px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 15px;
   color: Black;
   /* display: block; */
 }
