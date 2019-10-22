@@ -35,5 +35,6 @@ img{
   border-radius: 10px;
   margin: 40px auto 0 auto;
   width: 95%;
+  border: solid 3px black;
 }
 </style>

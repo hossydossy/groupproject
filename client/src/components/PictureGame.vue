@@ -130,6 +130,7 @@ button  {
   justify-content: space-between;
   text-align: center;
   text-overflow: ellipsis;
+  background-color: yellow;
 }
 
 h2 {
@@ -139,7 +140,7 @@ h2 {
   height: 50px;
   width: 300px;
   border-radius: 10px solid White;
-  background-color: White;
+  background-color: Black;
   color: Black;
   margin: auto;
 }
@@ -150,7 +151,7 @@ h2 {
   margin-right: auto;
   width: 550px;
   height: 350px;
-  border: solid 1px black;
+  border: solid 3px black;
 }
 
 
