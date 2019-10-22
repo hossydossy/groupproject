@@ -50,5 +50,6 @@ p {
   text-align: justify;
   width: 80%;
   margin-left: 40px;
+  color: Gray;
 }
 </style>

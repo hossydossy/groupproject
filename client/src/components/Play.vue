@@ -30,6 +30,7 @@ export default {
 h2 {
   color: White;
   font-family: 'Courier New';
+  font-size: 30px;
 }
 .main-container {
   display: flex;

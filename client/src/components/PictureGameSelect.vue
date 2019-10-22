@@ -42,11 +42,14 @@ img{
 h2 {
   color: #3A405A;
   margin-bottom: 0;
+  /* font-size: 24px; */
 }
 p {
   margin-top: 0;
   text-align: justify;
   width: 80%;
   margin-left: 40px;
+  color: Gray;
+  /* font-size: 22px; */
 }
 </style>

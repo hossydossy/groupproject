@@ -125,14 +125,14 @@ h1{
   width: 1000px;
   margin: 0 auto;
   text-align: center;
-  font-size: 24px;
+  font-size: 22px;
 }
 button{
   height: 80px;
   margin: 0;
   padding: 0;
   width: 20%;
-  font-size: 22px;
+  font-size: 20px;
   justify-content: space-between;
   text-align: center;
   text-overflow: ellipsis;

@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="container">
-    <h1>Top Tourist Attractions</h1>
+    <h1>Top Places to Visit</h1>
     <countries-select :countries="countries"></countries-select>
     <tourist-attraction-detail :country="selectedCountry"></tourist-attraction-detail>
   </div>
