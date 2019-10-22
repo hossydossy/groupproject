@@ -31,10 +31,11 @@ export default {
   -moz-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
   box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
 }
+
 img{
   border-radius: 10px;
-  margin: 0 auto 40px auto;
-  width: 80%;
-  height: auto;
+  margin: 40px auto 0 auto;
+  width: 95%;
+  border: solid 3px black;
 }
 </style>
