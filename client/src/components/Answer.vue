@@ -1,4 +1,4 @@
-<template lang="html">
+<!-- <template lang="html">
   <section id="answers">
     <div class="container" v-if="answerOptions[2]">
       <div class="divider"/>
@@ -86,4 +86,4 @@ h3 {
 
 }
 
-</style>
+</style> -->

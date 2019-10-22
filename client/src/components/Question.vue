@@ -1,4 +1,4 @@
-<template lang="html">
+<!-- <template lang="html">
   <div class="container">
     <random-flag :country="country"></random-flag>
   </div>
@@ -38,4 +38,4 @@ h1{
   text-align: center;
   font-weight: bold;
 }
-</style>
+</style> -->

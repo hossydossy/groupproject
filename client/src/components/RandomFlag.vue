@@ -1,4 +1,4 @@
-<template lang="html">
+<!-- <template lang="html">
     <img :src="country.flag"/>
 </template>
 
@@ -18,4 +18,4 @@ export default {
   flex-direction: row;
   width: 300px;
 }
-</style>
+</style> -->

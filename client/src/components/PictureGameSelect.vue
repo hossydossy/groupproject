@@ -1,7 +1,8 @@
 <template lang="html">
   <div class="container" v-on:click="playPictureGame">
-    <img :src="`images/gbr_03.jpg`"></img>
-    <h1>Picture Game</h1>
+    <h1>Flag Game</h1>
+    <img :src="`images/Scotland.jpg`"></img>
+
   </div>
 </template>
 
@@ -27,5 +28,6 @@ export default {
 img{
   border-radius: 10px;
   margin: 40px auto 0 auto;
+  width: 95%;
 }
 </style>
