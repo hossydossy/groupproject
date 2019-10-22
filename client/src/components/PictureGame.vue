@@ -115,10 +115,7 @@ h1{
   height: 100%;
   width: 100%;
   text-align: center;
-
-
 }
-
 button  {
   height: 100px;
   width: 450px;
@@ -128,7 +125,6 @@ button  {
   text-overflow: ellipsis;
   background-color: yellow;
 }
-
 h2 {
   display: block;
   flex-direction: row;
@@ -140,7 +136,6 @@ h2 {
   color: Black;
   margin: auto;
 }
-
 .center {
   display: block;
   margin-left: auto;
@@ -149,6 +144,4 @@ h2 {
   height: 350px;
   border: solid 3px black;
 }
-
-
 </style>

@@ -25,7 +25,6 @@ button{
   text-decoration: none;
   font-size: 15px;
   color: Black;
-  /* display: block; */
 }
 button:hover {
   color: #818181;

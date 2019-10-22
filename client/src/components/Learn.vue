@@ -33,21 +33,16 @@ h2 {
   flex-direction: column;
   height: 100%;
   text-align: center;
-  /* margin-left: 15%; */
   border: 1px solid #dfe1e5;
   border-radius: 8px;
   -webkit-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
   -moz-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
   box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
+
 }
 #learn-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  /* border: 1px solid #dfe1e5; */
-  /* border-radius: 8px;
-  -webkit-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
-  -moz-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
-  box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75); */
+  justify-content: center;
 }
 </style>
