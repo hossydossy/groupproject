@@ -1,16 +1,18 @@
 <template lang="html">
   <div class="main-container">
-    <h1>Picture Game</h1>
+    <h1>Flag Quiz:</h1>
     <img :src="country.flag" class="center"/>
     <br>
     <br>
     <div id="answer-container" v-if="answerOptions[2]">
       <button type="button" name="button" v-on:click="answerClicked(answerOptions[0])"> {{ answerOptions[0].name }} </button>
       <button type="button" name="button" v-on:click="answerClicked(answerOptions[1])"> {{ answerOptions[1].name }} </button>
-      <button type="button" name="button" v-on:click="answerClicked(answerOptions[2])"> {{ answerOptions[2].name }} </button>
-      <br>
-      <br>
-      <button type="button" v-on:click="nextQuestion()">Next Question</button>
+      <button type="button" name="button" v-on:click="answerClicked(answerOptions[2])"> {{ answerOptions[2].name }} </button></div>
+      <!-- <br>
+      <br> -->
+      <div>
+      <button class="btn" type="button" v-on:click="nextQuestion()">Next Question</button>
+    </div>
       <br>
       <br>
       <br>
@@ -115,8 +117,9 @@ h1{
   height: 100%;
   width: 100%;
   text-align: center;
+  font-family: 'Courier New';
 }
-button  {
+/* button  {
   height: 100px;
   width: 450px;
   font-size: 18px;
@@ -124,6 +127,30 @@ button  {
   text-align: center;
   text-overflow: ellipsis;
   background-color: yellow;
+} */
+button{
+  height: 80px;
+  /* width: 450px; */
+  margin: 0;
+  padding: 0;
+  width: 20%;
+  font-size: 14px;
+  justify-content: space-between;
+  text-align: center;
+  text-overflow: ellipsis;
+  /* margin: 20px auto 20px auto; */
+  border-radius: 10px;
+  /* height: 50px;
+  width: 150px; */
+  /* padding: 8px 8px 8px 8px; */
+  text-decoration: none;
+  /* font-size: 25px; */
+  color: Black;
+  font-family: 'Courier New';
+  /* display: block; */
+}
+button.btn:hover {
+  color: #818181;
 }
 h2 {
   display: block;
@@ -142,6 +169,12 @@ h2 {
   margin-right: auto;
   width: 550px;
   height: 350px;
-  border: solid 3px black;
+  /* border: solid 3px black; */
+  border-radius: 10px;
+}
+#answer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 </style>
