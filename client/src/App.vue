@@ -69,7 +69,7 @@ export default {
 
 <style lang="css" scoped>
   .bg{
-    /* background-image: url("../public/images/background.jpg"); */
+    background-image: url("../public/images/map1.jpg");
     background-size: cover;
     height: 100%;
   }

@@ -5,12 +5,12 @@
     <img class="country-img" :src="`images/${country.touristAttractionsImages[0]}`" alt="">
 
   <div class="description" >
-      <h3>{{country.name}}:  {{country.touristAttractionsDescriptions.attraction1.name}}</h3>
+      <h3>{{country.name}}: {{country.touristAttractionsDescriptions.attraction1.name}}</h3>
       <p>{{country.touristAttractionsDescriptions.attraction1.description1}}</p>
       <p>{{country.touristAttractionsDescriptions.attraction1.description2}}</p>
       <p>{{country.touristAttractionsDescriptions.attraction1.description3}}</p>
       <p>{{country.touristAttractionsDescriptions.attraction1.description4}}</p>
-    </div>
+  </div>
 
     <div class="container">
       <previous></previous>
@@ -56,6 +56,7 @@ export default {
   flex-direction: row;
   text-align: center;
   justify-content: center;
+  background-color: White;
 }
 .country-img {
   width: 90%;
