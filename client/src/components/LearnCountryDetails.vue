@@ -6,16 +6,16 @@
       <img class="country-img" :src="`images/${country.images[0]}`" alt="">
     </div>
     <div class="details">
-      <p><span style="color:#457B9D;font-weight:bold">Capital:</span> {{country.capital}}</p>
-      <p><span style="color:#457B9D;font-weight:bold">Population:</span> {{country.population}}</p>
-      <p><span style="color:#457B9D;font-weight:bold">Currency: </span> {{country.currency}} </p>
-      <p><span style="color:#457B9D;font-weight:bold">Languages: </span></p>
+      <p><span class="title">Capital:</span> {{country.capital}}</p>
+      <p><span class="title">Population:</span> {{country.population}}</p>
+      <p><span class="title">Currency: </span> {{country.currency}} </p>
+      <p><span class="title">Languages: </span></p>
       <ul v-for="(language) in country.languages">
          <li>{{language}}</li>
       </ul>
     </div>
       <div class="description" >
-          <p><span style="color:#457B9D;font-weight:bold">Description:</span> {{country.description}}</p>
+          <p><span class="title">Description:</span> {{country.description}}</p>
       </div>
     <div id="map"></div>
   </div>
@@ -68,7 +68,7 @@ export default {
 
 .wrapper {
   width: 600px;
-  margin: 20px auto;
+  margin: 0 auto;
   text-align: center;
   border: 1px solid #dfe1e5;
   border-radius: 8px;
@@ -76,7 +76,7 @@ export default {
   -moz-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
   box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
   background-color: white;
-  
+  margin-bottom: 20px;
 }
 
 .description {
@@ -110,6 +110,11 @@ export default {
   position: absolute;
   right: 0px;
   /* border-top-right-radius: 8px; */
+}
+
+.title{
+  color:#457B9D;
+  font-weight:bold;
 }
 
 h3 {

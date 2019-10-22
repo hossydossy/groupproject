@@ -1,6 +1,7 @@
 <template lang="html">
   <div class="container">
-    <select v-on:change="handleSelectedCountry">
+    <h2 class="title"> Discover Countries</h2>
+    <select class="select" v-on:change="handleSelectedCountry">
       <option value="">Select Country</option>
       <option v-for="(country, index) in countries" :value="country._id">{{country.name}}</option>
     </select>
@@ -35,9 +36,19 @@ export default {
 .container{
   display: flex;
   justify-content: center;
-  width: 50%;
   margin: auto;
   flex-direction: column;
 }
+
+.select {
+  width: 30%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.title {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
 </style>
-flex-direction: column;

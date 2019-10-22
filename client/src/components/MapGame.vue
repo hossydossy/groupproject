@@ -198,8 +198,8 @@ export default {
   text-align: center;
   cursor: pointer;
   outline: none;
-  color: #fff;
-  background-color: #4caf6194;
+  color: black;
+  background-color: white;
   border: none;
   border-radius: 15px;
   /* box-shadow: 0 5px #999; */

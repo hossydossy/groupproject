@@ -68,9 +68,5 @@ export default {
 </script>
 
 <style lang="css" scoped>
-  .bg{
-    background-image: url("../public/images/map1.jpg");
-    background-size: cover;
-    height: 100%;
-  }
+  
 </style>
