@@ -1,6 +1,7 @@
 <template lang="html">
   <div class="container" v-on:click="learnTouristAttractions">
-    <h2>Top Places to Visit:</h2>
+    <h2>Top Places to Visit</h2>
+    <p>Let us capture your imagination with stunning photography... visit our photo album and explore some of the world's top locations around the globe.</p>
     <img :src="`images/tourist.jpg`"></img>
   </div>
 </template>
@@ -30,22 +31,23 @@ export default {
   -moz-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
   box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
 }
-
 img{
   border-radius: 10px;
   margin: 10px auto 30px auto;
   width: 80%;
   height: 280px;
 }
-
 h2 {
   color: #3A405A;
   margin-bottom: 0;
+  font-size: 24px;
 }
 p {
   margin-top: 0;
-  text-align: justify;
+  text-align: center;
   width: 80%;
   margin-left: 40px;
+  font-size: 18px;
+  color: Gray;
 }
 </style>

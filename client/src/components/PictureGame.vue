@@ -164,7 +164,7 @@ h2 {
 }
 .wrapper {
   margin: 20px auto;
-  width: 500px;
+  width: 300px;
   height: auto;
   text-align: center;
   border-radius: 8px;

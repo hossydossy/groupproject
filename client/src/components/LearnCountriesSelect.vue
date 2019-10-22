@@ -1,6 +1,7 @@
 <template lang="html">
   <div class="container" v-on:click="learnCountries">
-    <h2>Location and Information: </h2>
+    <h2>Location and Information</h2>
+    <p>Travel the globe and find useful information relating to countries of the world.  Use the interactive map to explore countries in street and satelite view.</p>
     <img :src="`images/google_maps.jpg`"></img>
   </div>
 </template>
@@ -41,11 +42,14 @@ img{
 h2 {
   color: #3A405A;
   margin-bottom: 0;
+  font-size: 24px;
 }
 p {
   margin-top: 0;
-  text-align: justify;
+  text-align: center;
   width: 80%;
   margin-left: 40px;
+  font-size: 18px;
+  color: Gray;
 }
 </style>

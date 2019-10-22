@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="main-container">
   <div>
-    <h2>Learn more about the countries:</h2>
+    <h2>Learn more about the countries of our world:</h2>
     <div id="learn-container">
       <learn-countries-select></learn-countries-select>
       <learn-tourist-attractions-select></learn-tourist-attractions-select>
