@@ -1,31 +1,20 @@
 <template lang="html">
   <div class="container">
-    <!-- <nav-bar></nav-bar> -->
     <h1>Top Tourist Attractions</h1>
-    <!-- <div class="container"> -->
-      <countries-select :countries="countries"></countries-select>
-      <!-- <div class="container"> -->
-      <tourist-attraction-detail :country="selectedCountry"></tourist-attraction-detail>
-      <!-- <div class="container"> -->
-      <!-- </div> -->
-      <div>Next Image</div>
-      <div>Previous Image</div>
-    <!-- </div> -->
-    <!-- </div> -->
+    <countries-select :countries="countries"></countries-select>
+    <tourist-attraction-detail :country="selectedCountry"></tourist-attraction-detail>
   </div>
 </template>
 
 <script>
-import { eventBus } from '@/main.js'
+import { eventBus } from '@/main.js';
 import CountriesSelect from './CountriesSelect.vue';
 import TouristAttractionDetail from './TouristAttractionDetail.vue';
-import NavBar from './NavBar.vue';
 export default {
   name: 'learn-tourist-attractions',
   props: ['countries'],
   data() {
     return {
-      // countries: [],
       selectedCountry: null,
     }
   },
@@ -33,15 +22,7 @@ export default {
     'countries-select': CountriesSelect,
     'tourist-attraction-detail': TouristAttractionDetail,
   },
-  // methods: {
-  //   getCountries() {
-  //     fetch(`http://localhost:3000/api/countries`)
-  //       .then(response => response.json())
-  //       .then(apiResponse => this.countries = apiResponse)
-  //   }
-  // },
   mounted() {
-    // this.getCountries()
     eventBus.$on('country-selected', (country) => {
       this.selectedCountry = country
     })

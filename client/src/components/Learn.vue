@@ -1,6 +1,5 @@
 <template lang="html">
   <div class="main-container">
-    <!-- <nav-bar></nav-bar> -->
   <div>
     <h2>Learn more about the countries:</h2>
     <div id="games-container">
@@ -15,11 +14,9 @@
 import { eventBus } from '@/main.js'
 import LearnCountriesSelect from './LearnCountriesSelect.vue'
 import LearnTouristAttractionsSelect from './LearnTouristAttractionsSelect.vue'
-import NavBar from './NavBar.vue';
 export default {
   name: 'play',
   components: {
-    'nav-bar': NavBar,
     'learn-countries-select': LearnCountriesSelect,
     'learn-tourist-attractions-select': LearnTouristAttractionsSelect,
   }

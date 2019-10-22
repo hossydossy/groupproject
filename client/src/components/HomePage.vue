@@ -1,6 +1,5 @@
 <template lang="html">
   <div class="main-container">
-    <!-- <nav-bar></nav-bar> -->
     <h1>Explore the World</h1>
     <h2>Play and Learn</h2>
     <go-to-play></go-to-play>

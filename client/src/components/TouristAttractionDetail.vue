@@ -6,21 +6,30 @@
 
   <div class="description" >
       <!-- <p><span style="color:#457B9D;font-weight:bold">Description:</span> {{country.description}}</p> --><h3>{{country.name}}: Kastelholm Castle, Sund</h3>
-      <p><span style="color:#457B9D;font-weight:bold">Kastelholm Castle in Sund</span> is one of the top attractions in Åland. It’s a medieval castle, built in the 14th century. Many kings, royals, and nobles have spent time here.</p>
-      <p>This castle was once in the middle of the Kingdom of Sweden where the Swedish ruler Gustav Vasa, among other kings, spent their time.</p>
+      <p><span style="color:#457B9D;font-weight:bold">Kastelholm Castle in Sund</span> is one of the top attractions in Åland. It’s a medieval castle, built in the 14th century.</p>
+      <p>This castle was once in the middle of the Kingdom of Sweden where the Swedish ruler Gustav Vasa, among other kings, royals and nobles spent their time.</p>
       <p><span style="color:#457B9D;font-weight:bold">Seasonal Opening Hours: </span>Open from May until the middle of September.</p>
       <p><span style="color:#457B9D;font-weight:bold">Top Travel Tip: </span>If your visit falls outside of the season, It’s worth going here just to see the castle from the outside and take some great Instagram photos or shots for your photo album. The surrounding fjord area is really beautiful.</p>
       <p>If you really want to see the museum you can book a private visit outside of the season for an extra fee.</p>
-      </div>
+    </div>
+
+    <previous></previous>
+    <next></next>
+
   </div>
 </div>
 </template>
 
 <script>
+import Next from './Next.vue';
+import Previous from './Previous.vue';
 export default {
   name: 'tourist-attraction-detail',
   props: ['country'],
-
+  components: {
+    'next': Next,
+    'previous': Previous,
+  }
 }
 </script>
 
@@ -34,8 +43,8 @@ export default {
   margin: auto;
 }
 .country-img {
-  width: 600px;
-  border-radius: 8px 8px 0px 0px;
+  width: 90%;
+  margin-top: 25px;
 }
 .wrapper {
   width: 600px;

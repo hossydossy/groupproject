@@ -1,17 +1,15 @@
 <template lang="html">
-  <!-- <div class="main-container"> -->
-    <div class="main-container">
-      <label for='select-country-dropdown'>Select a country:
-        <select id='select-country-dropdown' v-model='selectedCountry' v-on:change='handleChange'>
-          <option value='Select a country' disabled selected>Select a country</option>
-          <option v-for='(country, index) in countries'
-          :country='country'
-          :key='index'
-          :value='country'>{{country.name}}</option>
-        </select>
-      </label>
-    </div>
-  <!-- </div> -->
+  <div class="main-container">
+    <label for='select-country-dropdown'>Select a country:
+      <select id='select-country-dropdown' v-model='selectedCountry' v-on:change='handleChange'>
+        <option value='Select a country' disabled selected>Select a country</option>
+        <option v-for='(country, index) in countries'
+        :country='country'
+        :key='index'
+        :value='country'>{{country.name}}</option>
+      </select>
+    </label>
+  </div>
 </template>
 
 <script>

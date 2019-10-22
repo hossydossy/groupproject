@@ -1,6 +1,5 @@
 <template lang="html">
   <div class="main-container">
-    <!-- <nav-bar></nav-bar> -->
     <h1>Picture Game</h1>
     <question></question>
     <div class="container">
@@ -12,13 +11,11 @@
 </template>
 
 <script>
-import NavBar from './NavBar.vue';
 import Question from './Question.vue';
 import Answer from './Answer.vue';
 export default {
   name: 'picture-game',
   components: {
-    'nav-bar': NavBar,
     'question': Question,
     'answer': Answer,
   }

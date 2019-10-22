@@ -30,7 +30,6 @@ export default {
   data() {
     return {
       countries: [],
-      // selectedCountry: null,
       country: null,
       menuOption: null,
     };
