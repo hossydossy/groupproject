@@ -54,7 +54,7 @@ export default {
   methods: {
 
     getRandomCountry() {
-        const indexCountry = Math.floor(Math.random() * this.countries.length - 1);
+        const indexCountry = Math.floor(Math.random() * this.countries.length);
         return this.countries[indexCountry];
       },
 
@@ -100,7 +100,7 @@ export default {
       } else if (this.questionTotal === 10) {
         // this.scoreShown();
         this.questionTotal = 0;
-
+        this.quizScore = 0;
       }
     }
 
@@ -150,6 +150,7 @@ h2 {
   margin-right: auto;
   width: 550px;
   height: 350px;
+  border: solid 1px black;
 }
 
 

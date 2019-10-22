@@ -2,7 +2,7 @@
 <div class="bg">
   <home-page v-if="!menuOption"></home-page>
   <play v-if="menuOption === 'play'"></play>
-  <picture-game v-if="menuOption === 'playPG'"></picture-game>
+  <picture-game v-if="menuOption === 'playPG'" :countries="countries"></picture-game>
   <map-game v-if="menuOption === 'playMG'" :countries="countries"></map-game>
   <learn v-if="menuOption === 'learn'" :countries="countries" v-on:click="loadCountries('learn')"></learn>
   <learn-country v-if="menuOption === 'learnCD'" :countries="countries"></learn-country>
