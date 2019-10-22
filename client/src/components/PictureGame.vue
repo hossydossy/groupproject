@@ -1,21 +1,22 @@
 <template lang="html">
   <div class="main-container">
     <h1>Flag Quiz:</h1>
-    <img :src="country.flag" class="center"/>
-    <br>
-    <br>
+    <div class="container">
+      <p>How well do you know the flags of the world?  Will you be able to recognise the flags of countries like France, Germany and Cyprus?  Test your knowledge in this fun interactive multiple choice quiz.  Click on the answer which matches the flag displayed.  Can you get all 10 correct?</p>
+      <p>Good luck!</p>
+    </div>
+
     <div id="answer-container" v-if="answerOptions[2]">
       <button type="button" name="button" v-on:click="answerClicked(answerOptions[0])"> {{ answerOptions[0].name }} </button>
       <button type="button" name="button" v-on:click="answerClicked(answerOptions[1])"> {{ answerOptions[1].name }} </button>
-      <button type="button" name="button" v-on:click="answerClicked(answerOptions[2])"> {{ answerOptions[2].name }} </button></div>
-      <!-- <br>
-      <br> -->
-      <div>
+      <button type="button" name="button" v-on:click="answerClicked(answerOptions[2])"> {{ answerOptions[2].name }} </button>
+    </div>
+    <div class="wrapper">
+      <img :src="country.flag"/>
+    </div>
+    <div>
       <button class="btn" type="button" v-on:click="nextQuestion()">Next Question</button>
     </div>
-      <br>
-      <br>
-      <br>
       <h2 v-if="questionTotal > 9"> Your score is {{ quizScore }} out of {{ questionTotal }}!</h2>
     </div>
   </div>
@@ -110,6 +111,7 @@ export default {
 <style lang="css" scoped>
 h1{
   color: White;
+  margin: 20px 0 0 0;
 }
 .main-container {
   display: flex;
@@ -119,35 +121,27 @@ h1{
   text-align: center;
   font-family: 'Courier New';
 }
-/* button  {
-  height: 100px;
-  width: 450px;
-  font-size: 18px;
-  justify-content: space-between;
+.container {
+  width: 1000px;
+  margin: 0 auto;
   text-align: center;
-  text-overflow: ellipsis;
-  background-color: yellow;
-} */
+  font-size: 24px;
+}
 button{
   height: 80px;
-  /* width: 450px; */
   margin: 0;
   padding: 0;
   width: 20%;
-  font-size: 14px;
+  font-size: 22px;
   justify-content: space-between;
   text-align: center;
   text-overflow: ellipsis;
-  /* margin: 20px auto 20px auto; */
+  /* margin-top: 20px; */
   border-radius: 10px;
-  /* height: 50px;
-  width: 150px; */
-  /* padding: 8px 8px 8px 8px; */
   text-decoration: none;
-  /* font-size: 25px; */
-  color: Black;
+  color: #3A405A;
   font-family: 'Courier New';
-  /* display: block; */
+  background-color: White;
 }
 button.btn:hover {
   color: #818181;
@@ -163,18 +157,25 @@ h2 {
   color: Black;
   margin: auto;
 }
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 550px;
-  height: 350px;
-  /* border: solid 3px black; */
-  border-radius: 10px;
-}
 #answer-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+.wrapper {
+  margin: 20px auto;
+  width: 500px;
+  height: auto;
+  text-align: center;
+  border-radius: 8px;
+  background-color: White;
+  -webkit-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
+  -moz-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
+  box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
+}
+img {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 8px;
 }
 </style>
