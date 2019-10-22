@@ -1,12 +1,18 @@
-<template lang="html">
+<!-- <template lang="html">
   <div class="container">
-    <img :src="`images/mkd_03.jpg`"></img>
+    <random-flag :country="country"></random-flag>
   </div>
 </template>
 
 <script>
+import RandomFlag from './RandomFlag.vue';
+
 export default {
   name: 'question',
+  props: ['country'],
+  components: {
+    'random-flag': RandomFlag
+  },
 }
 </script>
 
@@ -15,7 +21,7 @@ export default {
   border: 1px solid Black;
   margin: 0 auto;
   display: flex;
-  /* padding: 20px; */
+  padding: 20px;
   background-color: White;
   height: 420px;
   width: 600px;
@@ -32,4 +38,4 @@ h1{
   text-align: center;
   font-weight: bold;
 }
-</style>
+</style> -->
