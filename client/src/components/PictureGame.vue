@@ -8,6 +8,13 @@
       <button type="button" name="button" v-on:click="answerClicked(answerOptions[0])"> {{ answerOptions[0].name }} </button>
       <button type="button" name="button" v-on:click="answerClicked(answerOptions[1])"> {{ answerOptions[1].name }} </button>
       <button type="button" name="button" v-on:click="answerClicked(answerOptions[2])"> {{ answerOptions[2].name }} </button>
+      <br>
+      <br>
+      <button type="button" v-on:click="nextQuestion()">Next Question</button>
+      <br>
+      <br>
+      <br>
+      <h2 v-if="questionTotal > 9"> Your score is {{ quizScore }} out of {{ questionTotal }}!</h2>
     </div>
   </div>
 </template>
@@ -26,24 +33,30 @@ export default {
     return {
       answerOptions: [],
       questionTotal: 0,
-      quizScore: 0
+      quizScore: 0,
+      country: []
     }
   },
-  computed: {
-    country: function() {
-      const indexCountry = Math.floor(Math.random() * this.countries.length - 1);
-      return this.countries[indexCountry];
-    }
-  },
+  // computed: {
+  //   country: function() {
+  //     const indexCountry = Math.floor(Math.random() * this.countries.length - 1);
+  //     return this.countries[indexCountry];
+  //   }
+  // },
   mounted() {
+    this.country = this.getRandomCountry();
     this.answerOptions.push(this.country);
     this.getRandomAnswerOne();
     this.getRandomAnswerTwo();
     this.randomiseAnswers(this.answerOptions);
-
   },
 
   methods: {
+
+    getRandomCountry() {
+        const indexCountry = Math.floor(Math.random() * this.countries.length - 1);
+        return this.countries[indexCountry];
+      },
 
     getRandomAnswerOne() {
       let randomAnswerOne = Math.floor((Math.random() * this.countries.length));
@@ -69,9 +82,28 @@ export default {
       if (chosenAnswer === this.country)
       this.quizScore += 1;
 
+    },
 
+    // scoreShown(){
+    //   alert("Your score was " + this.quizScore);
+    // },
 
+    nextQuestion() {
+      if (this.questionTotal < 10) {
+        // get random country and assign it to this.country
+        this.country = this.getRandomCountry();
+        this.answerOptions = [];
+        this.answerOptions.push(this.country);
+        this.getRandomAnswerOne();
+        this.getRandomAnswerTwo();
+        this.randomiseAnswers(this.answerOptions);
+      } else if (this.questionTotal === 10) {
+        // this.scoreShown();
+        this.questionTotal = 0;
+
+      }
     }
+
   }
 }
 
@@ -91,22 +123,23 @@ h1{
 }
 
 button  {
-  height: 50px;
-  width: 200px;
+  height: 100px;
+  width: 400px;
   font-size: 20px;
   justify-content: space-around;
 }
 
-.h3 {
+h2 {
   display: block;
   flex-direction: row;
   justify-content: space-around;
   height: 50px;
   width: 300px;
-  border-radius: 10px solid Black;
+  border-radius: 10px solid White;
   background-color: White;
   color: Black;
   text-align: center;
+  margin: auto;
 }
 
 .center {
@@ -116,5 +149,6 @@ button  {
   width: 350px;
   height: 200px;
 }
+
 
 </style>
