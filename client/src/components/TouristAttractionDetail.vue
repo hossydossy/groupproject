@@ -13,8 +13,10 @@
       <p>If you really want to see the museum you can book a private visit outside of the season for an extra fee.</p>
     </div>
 
-    <previous></previous>
-    <next></next>
+    <div class="container">
+      <previous></previous>
+      <next></next>
+    </div>
 
   </div>
 </div>
@@ -41,6 +43,12 @@ export default {
   height: 100%;
   text-align: center;
   margin: auto;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
 }
 .country-img {
   width: 90%;
