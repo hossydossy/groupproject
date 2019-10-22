@@ -42,51 +42,15 @@ export default {
         zoom: 6,
         center: latLng
       });
-<<<<<<< HEAD
-      // var borderCoordinates = [
-      //       {lat: 25.774, lng: -80.190},
-      //       {lat: 18.466, lng: -66.118},
-      //       {lat: 32.321, lng: -64.757}
-      // ];
-      // const countryBorders = new google.maps.Polygon({
-      //     paths: this.convertCoordinates(),
-      //     strokeColor: '#FF0000',
-      //     strokeOpacity: 0.8,
-      //     strokeWeight: 3,
-      //     fillColor: '#FF0000',
-      //     fillOpacity: 0.35
-      // });
-      // countryBorders.setMap(map);
-=======
->>>>>>> develop
       const marker = new google.maps.Marker({
           position: latLng,
           map: map
       });
     }
   }
-<<<<<<< HEAD
-}
-    // },
-    // convertCoordinates() {
-
-    //   let coor = test.split(' ');
-    //
-    //   let googleCoordinates = [];
-    //
-    //   coor.forEach((cordinate) => {
-    //     let coorArray = cordinate.split(',')
-    //     googleCoordinates.push({lat: parseFloat(coorArray[1]), 'lng': parseFloat(coorArray[0])});
-    //   });
-    //   return googleCoordinates;
-    // }
-//   }
-// }
-=======
 
 }
 
->>>>>>> develop
 </script>
 
 <style lang="css" scoped>
@@ -94,10 +58,6 @@ export default {
   height: 300px;  /* The height is 400 pixels */
   width: 600px;  /* The width is the width of the web page */
   overflow:visible;
-<<<<<<< HEAD
-  /* margin: 20px auto; */
-=======
->>>>>>> develop
   border-radius: 0px 0px 8px 8px;
 }
 
@@ -136,8 +96,6 @@ export default {
 .details p {
   margin-bottom: 4px;
   margin-top: 4px;
-
-
 }
 
 .image-flag-container {
