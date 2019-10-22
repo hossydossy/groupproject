@@ -12,7 +12,7 @@ export default {
   // props: ['countries'],
   methods: {
     playMapGame: function(){
-      eventBus.$emit('go-to', this.menuOption = 'playMG')
+      eventBus.$emit('go-to', 'playMG')
     }
   }
 }

@@ -8,17 +8,24 @@
     </div>
     <div class="instructions">
       <p class="title">Instructions</p>
-      <p class="body">World Flag Quiz
-      How well do you know the flags of the world?  Will you be able to recognise the flags of the countries like France, Germany and Cyprus?
-    How to play:-
-  Click the map on the country which relates to the flag displayed.
-Good luck!</p>
-      <button type="button" name="button" @click='startGame' class="btn-2">Let's Play</button>
+      <div class="body">
+        <p>World Flag Quiz</p>
+        <p>How well do you know the flags of the world?  Will you be able to recognise the flags of countries like France, Germany and Cyprus?  Test your knowledge in this fun interactive map-based quiz.</p>
+        <p>How to play:</p>
+          Click the map on the country which relates to flag displayed.
+          Good luck!
+        </p>
+      </div>
+      <button type="button" name="button" @click='startGame' class="btn-2">Let's Play!</button>
+    </div>
+    <div class="back">
+      <button type="button" name="Back" v-on:click="goBack">Back</button>
     </div>
   </div>
 </template>
 
 <script>
+import { eventBus } from '@/main.js';
 
 export default {
   name: "map-game",
@@ -51,6 +58,7 @@ export default {
         center: center,
         mapTypeId: 'hybrid',
       });
+
       this.countries.map((country) => {
         const latLng = {
           lat: country.latlng[0],
@@ -73,8 +81,6 @@ export default {
     },
     checkGame(countrySelectedId) {
       if (countrySelectedId == this.countrySelected._id) {
-        // alert('You WIN 🎉');
-        // confetti.start(5000);
         confetti.start(2000, 50, 200)
         this.animate('.flag-img', 'flip');
         setTimeout(() => { this.randomFlag()}, 3500);
@@ -91,12 +97,17 @@ export default {
       function handleAnimationEnd() {
           node.classList.remove('animated', animationName)
           node.removeEventListener('animationend', handleAnimationEnd)
+
           if (typeof callback === 'function') callback()
       }
       node.addEventListener('animationend', handleAnimationEnd)
+    },
+    goBack(){
+      eventBus.$emit('go-to', 'play')
     }
   },
 }
+
 </script>
 
 <style lang="css" scoped>
@@ -108,30 +119,37 @@ export default {
 .wrapper {
   position: relative;
 }
+
 .flag {
   position: absolute;
   z-index: 500;
   left: 50%;
+  bottom: 50px;
+  margin-left: -75px;
   display: flex;
   flex-direction: column;
 }
+
 .flag-img {
   width: 150px;
   height: 100px;
   margin-left: auto;
   margin-right: auto;
 }
+
 .gm-style-mtc {
   display: none !important;
 }
+
 .btn {
   width: 150px;
   margin-top: 10px;
   font-weight: bold;
 }
+
 .instructions {
   width: 300px;
-  background-color: grey;
+  background-color: #636f6e;
   opacity: 0.9;
   position: absolute;
   z-index: 500;
@@ -142,12 +160,15 @@ export default {
   color: white;
   padding-bottom: 10px;
 }
+
 .title {
   text-align: center;
 }
+
 .hide {
   display: none;
 }
+
 .body {
   text-align: justify;
   padding: 0px 10px 0px 10px;
@@ -157,6 +178,32 @@ export default {
   text-align: center;
   display: block;
   margin: 0 auto;
+  font-weight: bold;
 
 }
+
+.back {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  z-index: 500;
+  width: 5%;
+  /* height: 100px; */
+
+}
+ .back button{
+  padding: 10px 20px;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4caf6194;
+  border: none;
+  border-radius: 15px;
+  /* box-shadow: 0 5px #999; */
+  font-weight: bold;
+ }
+
 </style>

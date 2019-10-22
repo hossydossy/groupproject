@@ -1,8 +1,8 @@
 <template lang="html">
 <div class="bg">
   <home-page v-if="!menuOption"></home-page>
-  <play v-if="menuOption === 'play'" :countries="countries" v-on:click="loadCountries('play')"></play>
-  <picture-game v-if="menuOption === 'playPG'" ></picture-game>
+  <play v-if="menuOption === 'play'"></play>
+  <picture-game v-if="menuOption === 'playPG'"></picture-game>
   <map-game v-if="menuOption === 'playMG'" :countries="countries"></map-game>
   <learn v-if="menuOption === 'learn'" :countries="countries" v-on:click="loadCountries('learn')"></learn>
   <learn-country v-if="menuOption === 'learnCD'" :countries="countries"></learn-country>
@@ -56,10 +56,9 @@ export default {
     }
   },
   mounted() {
-
     fetch(`http://localhost:3000/api/countries`)
       .then(response => response.json())
-      .then(apiResponse => this.countries = apiResponse)
+      .then(apiResponse => this.countries = apiResponse);
 
     eventBus.$on('go-to', (option) => {
       this.menuOption = option;

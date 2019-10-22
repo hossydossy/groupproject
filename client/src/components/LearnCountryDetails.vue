@@ -33,6 +33,7 @@ export default {
   },
   methods: {
     displayMap() {
+
       const latLng = {
         lat: this.country.latlng[0],
         lng: this.country.latlng[1]
@@ -41,6 +42,7 @@ export default {
         zoom: 6,
         center: latLng
       });
+<<<<<<< HEAD
       // var borderCoordinates = [
       //       {lat: 25.774, lng: -80.190},
       //       {lat: 18.466, lng: -66.118},
@@ -55,12 +57,15 @@ export default {
       //     fillOpacity: 0.35
       // });
       // countryBorders.setMap(map);
+=======
+>>>>>>> develop
       const marker = new google.maps.Marker({
           position: latLng,
           map: map
       });
     }
   }
+<<<<<<< HEAD
 }
     // },
     // convertCoordinates() {
@@ -77,6 +82,11 @@ export default {
     // }
 //   }
 // }
+=======
+
+}
+
+>>>>>>> develop
 </script>
 
 <style lang="css" scoped>
@@ -84,7 +94,10 @@ export default {
   height: 300px;  /* The height is 400 pixels */
   width: 600px;  /* The width is the width of the web page */
   overflow:visible;
+<<<<<<< HEAD
   /* margin: 20px auto; */
+=======
+>>>>>>> develop
   border-radius: 0px 0px 8px 8px;
 }
 
@@ -123,7 +136,10 @@ export default {
 .details p {
   margin-bottom: 4px;
   margin-top: 4px;
+
+
 }
+
 .image-flag-container {
   position: relative;
 }
