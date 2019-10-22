@@ -2,7 +2,7 @@
   <div class="main-container">
   <div>
     <h2>Learn more about the countries:</h2>
-    <div id="games-container">
+    <div id="learn-container">
       <learn-countries-select></learn-countries-select>
       <learn-tourist-attractions-select></learn-tourist-attractions-select>
     </div>
@@ -25,7 +25,8 @@ export default {
 
 <style lang="css" scoped>
 h2 {
-  color: Black;
+  color: White;
+  font-family: 'Courier New';
 }
 .main-container {
   display: flex;
@@ -39,7 +40,7 @@ h2 {
   -moz-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
   box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
 }
-#games-container {
+#learn-container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;

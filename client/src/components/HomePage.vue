@@ -40,7 +40,8 @@ h2{
 }
 
 h1, h2{
-  /* color: White; */
+  color: White;
+  font-family: "Courier New"
 }
 
 .play {

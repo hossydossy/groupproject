@@ -24,7 +24,7 @@ button{
   text-decoration: none;
   font-size: 25px;
   color: Black;
-  /* display: block; */
+  font-family: 'Courier New';
 }
 button:hover {
   color: #818181;

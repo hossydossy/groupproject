@@ -40,4 +40,4 @@ export default {
   flex-direction: column;
 }
 </style>
-flex-direction: column;
+<!-- flex-direction: column; -->

@@ -1,8 +1,8 @@
 <template lang="html">
   <div class="container" v-on:click="playPictureGame">
-    <h1>Flag Game</h1>
-    <img :src="`images/Scotland.jpg`"></img>
-
+    <h2>Multiple Choice Quiz</h2>
+    <p>How well do you know the flags of the world.  Test your knowledge in this fun interactive multiple choice quiz.  Click on the answer which matches the flag displayed.  Can you get all 10 correct?</p>
+    <img :src="`images/european_flags.png`"></img>
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
 
 <style lang="css" scoped>
 .container {
-  /* border: 1px solid Black; */
+  font-family: 'Courier New';
   width: 30%;
   background-color: White;
   border-radius: 10px;
@@ -31,10 +31,22 @@ export default {
   -moz-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
   box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
 }
+
 img{
   border-radius: 10px;
-  margin: 40px auto 0 auto;
-  width: 95%;
-  border: solid 3px black;
+  margin: 10px auto 30px auto;
+  width: 80%;
+  height: 280px;
+}
+
+h2 {
+  color: #3A405A;
+  margin-bottom: 0;
+}
+p {
+  margin-top: 0;
+  text-align: justify;
+  width: 80%;
+  margin-left: 40px;
 }
 </style>

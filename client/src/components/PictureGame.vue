@@ -21,14 +21,10 @@
 
 <script>
 import { eventBus } from '@/main.js';
-import NavBar from './NavBar.vue';
 
 export default {
   name: 'picture-game',
   props: ['countries'],
-  components: {
-    'nav-bar': NavBar
-  },
   data(){
     return {
       answerOptions: [],
