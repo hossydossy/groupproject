@@ -117,6 +117,7 @@ h1{
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
   text-align: center;
 
 
@@ -124,21 +125,22 @@ h1{
 
 button  {
   height: 100px;
-  width: 400px;
-  font-size: 20px;
-  justify-content: space-around;
+  width: 450px;
+  font-size: 18px;
+  justify-content: space-between;
+  text-align: center;
+  text-overflow: ellipsis;
 }
 
 h2 {
   display: block;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 50px;
   width: 300px;
   border-radius: 10px solid White;
   background-color: White;
   color: Black;
-  text-align: center;
   margin: auto;
 }
 
@@ -146,8 +148,8 @@ h2 {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 350px;
-  height: 200px;
+  width: 550px;
+  height: 350px;
 }
 
 
