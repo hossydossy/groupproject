@@ -2,8 +2,10 @@
   <div class="main-container">
     <h1>Explore the World</h1>
     <h2>Play and Learn</h2>
-    <go-to-play></go-to-play>
-    <go-to-learn></go-to-learn>
+    <div class="">
+      <go-to-play class="play"></go-to-play>
+      <go-to-learn></go-to-learn>
+    </div>
   </div>
 </template>
 
@@ -39,5 +41,9 @@ h2{
 
 h1, h2{
   /* color: White; */
+}
+
+.play {
+  margin-right: 50px;
 }
 </style>
