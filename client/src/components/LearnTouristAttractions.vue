@@ -24,7 +24,7 @@ export default {
   },
   mounted() {
     eventBus.$on('country-selected', (country) => {
-      this.selectedCountry = country
+      this.selectedCountry = country;
     });
   }
 }

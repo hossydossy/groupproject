@@ -35,9 +35,13 @@ export default {
 }
 
 img{
-  border-radius: 10px;
+  /* border-radius: 8px; */
   margin: 10px auto 30px auto;
   width: 80%;
+  border-radius: 8px solid LightGray;
+  -webkit-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
+  -moz-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
+  box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
   /* border: solid 3px black; */
 }
 

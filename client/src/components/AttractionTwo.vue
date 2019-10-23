@@ -9,11 +9,10 @@
   </div>
     <div v-if='country' class="wrapper" id="content">
       <div class="description">
-        <p class="heading">{{country.name}}: {{country.touristAttractionsDescriptions.attraction2.name}}</p>
-        <p>{{country.touristAttractionsDescriptions.attraction2.description1}}</p>
-        <p>{{country.touristAttractionsDescriptions.attraction2.description2}}</p>
-        <p>{{country.touristAttractionsDescriptions.attraction2.description3}}</p>
-        <p>{{country.touristAttractionsDescriptions.attraction2.description4}}</p>
+        <p><span class="bold">{{country.name}}: {{country.touristAttractionsDescriptions.attraction2.name}}</span> {{country.touristAttractionsDescriptions.attraction2.description1}}</p>
+        <p><span class="bold">Seasonal Opening Hours:</span> {{country.touristAttractionsDescriptions.attraction2.description2}}</p>
+        <p><span class="bold">Top Travel Tips:</span> {{country.touristAttractionsDescriptions.attraction2.description3}}</p>
+        <p><span class="bold">**</span> {{country.touristAttractionsDescriptions.attraction2.description4}}</p>
         <div class="btn-container">
           <previous></previous>
         </div>
@@ -35,7 +34,6 @@ export default {
 </script>
 
 <style lang="css" scoped>
-<style lang="css" scoped>
 .container {
   display: flex;
   flex-direction: row;
@@ -52,6 +50,10 @@ export default {
 .country-img {
   width: 90%;
   margin-top: 25px;
+  border-radius: 8px solid LightGray;
+  -webkit-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
+  -moz-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
+  box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
 }
 .wrapper {
   width: 600px;
@@ -84,5 +86,11 @@ h3 {
 }
 p {
   font-family: 'Courier New';
+  font-size: 16px;
+}
+.bold {
+  color: #3A405A;
+  font-weight: bold;
+  font-size: 18px;
 }
 </style>
