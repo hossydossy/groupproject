@@ -15,7 +15,7 @@
       <img :src="country.flag"/>
     </div>
     <div>
-      <button class="btn" type="button" v-on:click="nextQuestion()">Next Question</button>
+      <button class="btn" type="button" v-on:click="nextQuestion()"> {{answerMessage}} <br> <br> Next Question?</button>
     </div>
       <h2 v-if="questionTotal > 9"> Your score is {{ quizScore }} out of {{ questionTotal }}!</h2>
     </div>
@@ -33,42 +33,39 @@ export default {
       answerOptions: [],
       questionTotal: 0,
       quizScore: 0,
-      country: []
+      country: [],
+      answerMessage: ""
     }
   },
-  // computed: {
-  //   country: function() {
-  //     const indexCountry = Math.floor(Math.random() * this.countries.length - 1);
-  //     return this.countries[indexCountry];
-  //   }
-  // },
+
   mounted() {
     this.country = this.getRandomCountry();
     this.answerOptions.push(this.country);
-    this.getRandomAnswerOne();
-    this.getRandomAnswerTwo();
+    this.getRandomAnswers();
     this.randomiseAnswers(this.answerOptions);
   },
 
   methods: {
 
     getRandomCountry() {
-        const indexCountry = Math.floor(Math.random() * this.countries.length);
-        return this.countries[indexCountry];
-      },
+      const indexCountry = Math.floor(Math.random() * this.countries.length);
+      return this.countries[indexCountry];
+    },
 
-    getRandomAnswerOne() {
+    getRandomAnswers() {
       let randomAnswerOne = Math.floor((Math.random() * this.countries.length));
+      let randomAnswerTwo = Math.floor((Math.random() * this.countries.length));
       if (this.countries[randomAnswerOne] === this.country)
       do {
         let randomAnswerOne = Math.floor((Math.random() * this.countries.length));
       }
       while (this.countries[randomAnswerOne] === this.country);
+      else if (this.countries[randomAnswerTwo] === this.country || this.countries[randomAnswerOne] === this.countries[randomAnswerTwo])
+      do {
+        let randomAnswerTwo = Math.floor((Math.random() * this.countries.length));
+      }
+      while (this.countries[randomAnswerTwo] === this.country || this.countries[randomAnswerOne] === this.countries[randomAnswerTwo]);
       this.answerOptions.push(this.countries[randomAnswerOne]);
-    },
-
-    getRandomAnswerTwo() {
-      let randomAnswerTwo = Math.floor((Math.random() * this.countries.length));
       this.answerOptions.push(this.countries[randomAnswerTwo]);
     },
 
@@ -78,31 +75,29 @@ export default {
 
     answerClicked(chosenAnswer) {
       this.questionTotal += 1;
-      if (chosenAnswer === this.country)
-      this.quizScore += 1;
-
+      if (chosenAnswer === this.country){
+        this.quizScore += 1;
+        this.answerMessage = this.country.message.ok + " (Well Done!)";
+      }
+      else {
+        this.answerMessage = this.country.message.wrong + " (That's not right...)";
+      }
     },
-
-    // scoreShown(){
-    //   alert("Your score was " + this.quizScore);
-    // },
 
     nextQuestion() {
       if (this.questionTotal < 10) {
-        // get random country and assign it to this.country
         this.country = this.getRandomCountry();
         this.answerOptions = [];
         this.answerOptions.push(this.country);
-        this.getRandomAnswerOne();
-        this.getRandomAnswerTwo();
+        this.getRandomAnswers();
         this.randomiseAnswers(this.answerOptions);
+        this.answerMessage="";
       } else if (this.questionTotal === 10) {
         // this.scoreShown();
         this.questionTotal = 0;
         this.quizScore = 0;
       }
     }
-
   }
 }
 
@@ -153,7 +148,7 @@ h2 {
   height: 50px;
   width: 300px;
   border-radius: 10px solid White;
-  background-color: Black;
+  background-color: White;
   color: Black;
   margin: auto;
 }
