@@ -1,5 +1,6 @@
 <template lang="html">
 <div class="bg">
+  <img class='home-icon' src="images/home-icon.png" @click='goHome()'>
   <home-page v-if="!menuOption"></home-page>
   <play v-if="menuOption === 'play'"></play>
   <picture-game v-if="menuOption === 'playPG'" :countries="countries"></picture-game>
@@ -53,6 +54,9 @@ export default {
       fetch(`http://localhost:3000/api/countries`)
         .then(response => response.json())
         .then(apiResponse => this.countries = apiResponse)
+    },
+    goHome() {
+      this.menuOption = null;
     }
   },
   mounted() {
@@ -68,9 +72,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
-  .bg{
-    background-image: url("../public/images/map1.jpg");
-    background-size: cover;
-    height: 100%;
-  }
+
+.home-icon{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 70px;
+  height: 70px;
+}
 </style>
