@@ -906,25 +906,6 @@ db.countries_details.insertMany([
       'wrong': "Incorrecto "
     }
   },
-
-  {
-    name: "Svalbard and Jan Mayen",
-    capital: "Longyearbyen",
-    latlng: [78,
-      -20
-    ],
-    region: "Europe",
-    population: 2562,
-    languages: ["Norwegian"],
-    currency: "Norwegian krone",
-    flag: "https://restcountries.eu/data/sjm.svg",
-    description: "Svalbard and Jan Mayen is a statistical designation defined by ISO 3166-1 for a collective grouping of two remote jurisdictions of Norway—Svalbard and Jan Mayen. While the two are combined for the purposes of the International Organization for Standardization category, they are not administratively related.",
-    images: ["sjm_01.jpg", "sjm_02.jpg", "sjm_03.jpg"],
-    message: {
-      'ok': "Bra gjort!",
-      'wrong': "Det er ikke riktig"
-    }
-  },
   {
     name: "Sweden",
     capital: "Stockholm",
