@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="main-container">
-    <h1>Explore the World</h1>
+    <h1>Explore our World</h1>
     <h2>Play and Learn</h2>
     <div class="">
       <go-to-play class="play"></go-to-play>
@@ -37,10 +37,13 @@ h1{
 
 h2{
   margin: 0 auto 20px auto;
+  font-size: 30px;
+  font-weight: lighter;
 }
 
 h1, h2{
-  /* color: White; */
+  color: White;
+  font-family: "Courier New"
 }
 
 .play {

@@ -15,28 +15,21 @@ db.countries_details.insertMany([
     flag: "https://restcountries.eu/data/ala.svg",
     description: "The Åland Islands, or Åland, is an autonomous region of Finland. Comprising around 6,700 islands, this Swedish-speaking archipelago is in the Baltic Sea. The capital, Mariehamn, on the main island of Fasta Åland, is known for its beaches and streets lined with 19th-century wooden townhouses, handicraft shops and cafes. Västerhamn, the town's western port, links Åland with Estonia, Sweden and mainland Finland.",
     images: ["ala_01.jpg", "ala_02.jpg", "ala_03.jpg"],
-    touristAttractionsImages: ["ala_ta_01.jpg", "ala_ta_02.png", "ala_ta_03.png"],
+    touristAttractionsImages: ["ala_ta_01.jpg", "ala_ta_02.png"],
     touristAttractionsDescriptions: {
       attraction1: {
         name: "Kastelholm Castle, Sund",
         description1: "Kastelholm Castle in Sund is one of the top attractions in Åland. It’s a medieval castle, built in the 14th century.  This castle was once in the middle of the Kingdom of Sweden where the Swedish ruler Gustav Vasa, among other kings, royals and nobles spent their time.",
-        description2: "Seasonal Opening Hours:  Open from May until the middle of September.",
-        description3: "Top Travel Tip:  If your visit falls outside of the season, It’s worth going here just to see the castle from the outside and take some great Instagram photos or shots for your photo album. The surrounding fjord area is really beautiful.",
-        description4: "If you really want to see the museum you can book a private visit outside of the season for an extra fee."
+        description2: "Open from May until the middle of September.",
+        description3: "If your visit falls outside of the season, It’s worth going here just to see the castle from the outside and take some great Instagram photos or shots for your photo album. The surrounding fjord area is really beautiful.",
+        description4: "If you really want to see the museum you can book a private visit outside of the season for an extra fee.",
       },
       attraction2: {
-        name: "Test",
-        description1: "Test",
-        description2: "Test",
-        description3: "Test",
-        description4: "Test"
-      },
-      attraction2: {
-        name: "Test",
-        description1: "Test",
-        description2: "Test",
-        description3: "Test",
-        description4: "Test"
+        name: "Käringsund, Eckerö",
+        description1: "An idyllic archipelago village in Eckerö.  The photograph shows the Baltic Sea, lined with rustic boathouses, reminiscing of a time when fishing was a vital part of Åland life and culture.  This is also the location where scenes from Astrid Lingren’s “Seacrow Island” were recorded in the 1960s.",
+        description2: "Worth a visit all year round.",
+        description3: "Such a charming place to visit in the summer, you can go swimming, buy ice cream, and enjoy the beach in the warm sum.",
+        description4: "Although Käringsund might be deserted in winter, don’t let that stop you. This place is so picturesque, and a must see destination for budding and experiences photographers alike!",
       }
     },
     message: {

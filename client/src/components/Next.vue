@@ -1,6 +1,6 @@
 <template lang="html">
   <!-- <button type="button" name="Next" v-on:click="goToNextImage">Next Image</button> -->
-  <button type="button" name="Next">Next</button>
+  <button type="button" name="Next" v-on:click="goToNextImage">Next</button>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
   name: 'next',
   methods: {
     goToNextImage: function(){
-      eventBus.$emit('go-to', this.menuOption = 'learn')
+      eventBus.$emit('tourist-attraction', this.selectedTouristAttraction = 'attractionTwo');
     }
   }
 }
@@ -25,7 +25,7 @@ button{
   text-decoration: none;
   font-size: 15px;
   color: Black;
-  /* display: block; */
+  font-family: 'Courier New';
 }
 button:hover {
   color: #818181;

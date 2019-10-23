@@ -28,7 +28,9 @@ export default {
 
 <style lang="css" scoped>
 h2 {
-  color: Black;
+  color: White;
+  font-family: 'Courier New';
+  font-size: 30px;
 }
 .main-container {
   display: flex;
@@ -40,7 +42,7 @@ h2 {
 #games-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 

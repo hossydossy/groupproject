@@ -1,7 +1,8 @@
 <template lang="html">
   <div class="container" v-on:click="learnTouristAttractions">
-    <!-- <img :src="`images/gbr_03.jpg`"></img> -->
-    <h1>Top Tourist Attractions</h1>
+    <h2>Top Places to Visit</h2>
+    <p>Let us capture your imagination with stunning photography... visit our photo album and explore some of the world's top locations around the globe.</p>
+    <img :src="`images/tourist.jpg`"></img>
   </div>
 </template>
 
@@ -19,7 +20,7 @@ export default {
 
 <style lang="css" scoped>
 .container {
-  /* border: 1px solid Black; */
+  font-family: 'Courier New';
   width: 30%;
   background-color: White;
   border-radius: 10px;
@@ -31,7 +32,24 @@ export default {
   box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
 }
 img{
-  border-radius: 10px;
-  margin: 40px auto 0 auto;
+  /* border-radius: 10px; */
+  margin: 10px auto 30px auto;
+  width: 80%;
+  height: 280px;
+  border-radius: 8px solid LightGray;
+  -webkit-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
+  -moz-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
+  box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
+}
+h2 {
+  color: #3A405A;
+  margin-bottom: 0;
+}
+p {
+  margin-top: 0;
+  text-align: justify;
+  width: 80%;
+  margin-left: 40px;
+  color: Gray;
 }
 </style>

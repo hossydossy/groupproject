@@ -22,9 +22,9 @@ button{
   width: 150px;
   padding: 8px 8px 8px 8px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 26px;
   color: Black;
-  /* display: block; */
+  font-family: 'Courier New';
 }
 button:hover {
   color: #818181;

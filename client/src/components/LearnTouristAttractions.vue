@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="container">
-    <h1>Top Tourist Attractions</h1>
+    <h1>Top Places to Visit</h1>
     <countries-select :countries="countries"></countries-select>
     <tourist-attraction-detail :country="selectedCountry"></tourist-attraction-detail>
   </div>
@@ -24,15 +24,16 @@ export default {
   },
   mounted() {
     eventBus.$on('country-selected', (country) => {
-      this.selectedCountry = country
-    })
+      this.selectedCountry = country;
+    });
   }
 }
 </script>
 
 <style lang="css" scoped>
   h1{
-    color: Black;
+    color: White;
+    font-family: 'Courier New';
   }
   /* .main-container {
     display: flex;
@@ -51,10 +52,10 @@ export default {
     flex-direction: column;
     height: 100%;
     text-align: center;
-    border: 1px solid #dfe1e5;
+    /* border: 1px solid #dfe1e5;
     border-radius: 8px;
     -webkit-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
     -moz-box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
-    box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75);
+    box-shadow: 15px 14px 37px -19px rgba(0,0,0,0.75); */
   }
 </style>

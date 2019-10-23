@@ -1,6 +1,6 @@
 <template lang="html">
   <!-- <button type="button" name="Previous" v-on:click="goToPreviousImage">Previous Image</button> -->
-  <button type="button" name="Previous">Previous</button>
+  <button type="button" name="Previous" v-on:click="goToPreviousImage">Previous</button>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
   name: 'previous',
   methods: {
     goToPreviousImage: function(){
-      eventBus.$emit('go-to', this.menuOption = 'learn')
+      eventBus.$emit('tourist-attraction', this.selectedTouristAttraction = 'attractionOne');
     }
   }
 }
@@ -25,6 +25,7 @@ button{
   text-decoration: none;
   font-size: 15px;
   color: Black;
+  font-family: 'Courier New';
   /* display: block; */
 }
 button:hover {

@@ -35,6 +35,9 @@ export default {
   /* display: flex;
   flex-direction: column;
   margin: 20px auto 20px auto; */
+  font-family: 'Courier New';
+  font-size: 24px;
+  font-weight: lighter;
 }
 .container {
   /* display: flex;
