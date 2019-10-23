@@ -1,6 +1,6 @@
 <template lang="html">
 <div class="bg">
-  <img class='home-icon' src="images/home-icon.png" @click='goHome()'>
+  <img class='home-icon1' src="images/home-icon1.png" @click='goHome()'>
   <home-page v-if="!menuOption"></home-page>
   <play v-if="menuOption === 'play'"></play>
   <picture-game v-if="menuOption === 'playPG'" :countries="countries"></picture-game>
@@ -73,7 +73,7 @@ export default {
 
 <style lang="css" scoped>
 
-.home-icon{
+.home-icon1{
   position: absolute;
   top: 10px;
   left: 10px;
