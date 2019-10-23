@@ -15,7 +15,7 @@
       <img :src="country.flag"/>
     </div>
     <div>
-      <button class="btn" type="button" v-on:click="nextQuestion()"> {{answerMessage}} <br> <br> Next Question?</button>
+      <button class="btn" type="button" v-if="answerMessage" v-on:click="nextQuestion()"> <span class="feedback">{{answerMessage}}</span> <br> Next Question?</button>
     </div>
       <h2 v-if="questionTotal > 9"> Your score is {{ quizScore }} out of {{ questionTotal }}!</h2>
     </div>
@@ -172,5 +172,9 @@ img {
   width: 100%;
   margin: 0 auto;
   border-radius: 8px;
+}
+.feedback {
+  font-weight: bold;
+  color: #3A405A;
 }
 </style>
