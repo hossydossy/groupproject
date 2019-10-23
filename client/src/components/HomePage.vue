@@ -15,7 +15,18 @@ export default {
   components: {
     'call-to-action': CallToAction,
     'nav-bar': NavBar,
-  }
+  },
+  // data(){
+  //   return {
+  //     travelQuotes: [(“Adventure is worthwhile.” - Aesop), (“Travel isn’t always pretty. It isn’t always comfortable. Sometimes it hurts, it even breaks your heart. But that’s okay. The journey changes you; it should change you. It leaves marks on your memory, on your consciousness, on your heart, and on your body. You take something with you. Hopefully, you leave something good behind.” - Anthony Bourdain)]
+  //   }
+  // },
+  // methods: {
+  //   getRandomQuote() {
+  //       const indexQuote = Math.floor(Math.random() * this.travelQuotes.length - 1);
+  //       console.log(this.travelQuotes[indexQuote]);
+  //     },
+  // }
 }
 </script>
 
