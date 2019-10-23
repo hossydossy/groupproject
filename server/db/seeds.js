@@ -50,6 +50,23 @@ db.countries_details.insertMany([
     flag: "https://restcountries.eu/data/alb.svg",
     description: "Albania, on Southeastern Europe’s Balkan Peninsula, is a small country with Adriatic and Ionian coastlines and an interior crossed by the Albanian Alps. The country has many castles and archaeological sites. Capital Tirana centers on sprawling Skanderbeg Square, site of the National History Museum, with exhibits spanning antiquity to post-communism, and frescoed Et’hem Bey Mosque.",
     images: ["alb_01.jpg", "alab_02.jpg", "alb_03.jpg"],
+    touristAttractionsImages: ["alb_ta_01.jpg", "alb_ta_02.jpg"],
+    touristAttractionsDescriptions: {
+      attraction1: {
+        name: "Butrint National Park",
+        description1: "Home to a number of diverse ecosystems and stunning archaeological sites, Butrint National Park is a popular tourist destination, in large part due to its proximity to the Greek island of Corfu. Many people come to see its majestic blend of history and nature.",
+        description2: "Worth a visit all year round.",
+        description3: "The main attraction, however, is the amazing archaeological site which covers over 2,500 years of history; this includes ancient city walls, remnants of a Roman theater, a Byzantine Basilica and two castles.",
+        description4: "Wandering around the ruins with the beautiful scenery all around you is a delightful experience. This is undoubtedly one of the hidden gems of what Albania has to offer.",
+      },
+      attraction2: {
+        name: "Shkodra, near Lake Skadar",
+        description1: "Lying just a stone’s throw away from huge Lake Skadar that straddles the Montenegro-Albania border, Shkodra is a very pretty city to visit. The Buna River runs through town and the Albanian Alps can be seen off in the distance.",
+        description2: "Worth a visit all year round.",
+        description3: "Although the center of the city has recently undergone extensive renovations, there are still plenty of lovely old buildings and historic sites to be found, such as the Ebu Beker Mosque and Orthodox Cathedral. The Historical Museum showcases just some of the region’s rich history and heritage.",
+        description4: "With so much beautiful countryside surrounding Shkodra for visitors to explore, there is something for everyone to enjoy.",
+      },
+    },
     message: {
       'ok': "Te lumte!",
       'wrong': "Kjo nuk është e drejtë"
